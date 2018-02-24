@@ -1,0 +1,17 @@
+$fonts: Rubik,Arial,sans-serif;
+$bodycolor: #333;
+$linkcolor: #110a79;
+$linkcolorhover: #34b3d1;
+$fonts-path: "../fonts" !default;
+$divider: 18.461538462;
+@mixin animation($cssrule: all, $delay:.25s, $effect:ease-in-out) {
+  transition: $cssrule $delay $effect;
+}
+@mixin borderradius($rad: 5px) {
+  border-radius: $rad;
+}
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}

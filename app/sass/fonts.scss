@@ -1,0 +1,101 @@
+// fonts
+
+@font-face {
+    font-family: 'Rubik';
+    src: local('Rubik Light'), local('Rubik-Light'),
+        url('#{$fonts-path}/hinted-Rubik-Light.woff2') format('woff2'),
+        url('#{$fonts-path}/hinted-Rubik-Light.woff') format('woff'),
+        url('#{$fonts-path}/hinted-Rubik-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: local('Rubik Medium Italic'), local('Rubik-MediumItalic'),
+        url('#{$fonts-path}/hinted-Rubik-MediumItalic.woff2') format('woff2'),
+        url('#{$fonts-path}/hinted-Rubik-MediumItalic.woff') format('woff'),
+        url('#{$fonts-path}/hinted-Rubik-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: local('Rubik Italic'), local('Rubik-Italic'),
+        url('#{$fonts-path}/hinted-Rubik-Italic.woff2') format('woff2'),
+        url('#{$fonts-path}/hinted-Rubik-Italic.woff') format('woff'),
+        url('#{$fonts-path}/hinted-Rubik-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gibson';
+    src: local('Gibson Light Bold'), local('Gibson-SemiBold'),
+        url('#{$fonts-path}/hinted-Gibson-SemiBold.woff2') format('woff2'),
+        url('#{$fonts-path}/hinted-Gibson-SemiBold.woff') format('woff'),
+        url('#{$fonts-path}/hinted-Gibson-SemiBold.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: local('Rubik Medium'), local('Rubik-Medium'),
+        url('#{$fonts-path}/hinted-Rubik-Medium.woff2') format('woff2'),
+        url('#{$fonts-path}/hinted-Rubik-Medium.woff') format('woff'),
+        url('#{$fonts-path}/hinted-Rubik-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: local('Rubik Bold'), local('Rubik-Bold'),
+        url('#{$fonts-path}/hinted-Rubik-Bold.woff2') format('woff2'),
+        url('#{$fonts-path}/hinted-Rubik-Bold.woff') format('woff'),
+        url('#{$fonts-path}/hinted-Rubik-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: local('Rubik Bold Italic'), local('Rubik-BoldItalic'),
+        url('#{$fonts-path}/hinted-Rubik-BoldItalic.woff2') format('woff2'),
+        url('#{$fonts-path}/hinted-Rubik-BoldItalic.woff') format('woff'),
+        url('#{$fonts-path}/hinted-Rubik-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: local('Rubik Regular'), local('Rubik-Regular'),
+        url('#{$fonts-path}/hinted-Rubik-Regular.woff2') format('woff2'),
+        url('#{$fonts-path}/hinted-Rubik-Regular.woff') format('woff'),
+        url('#{$fonts-path}/hinted-Rubik-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gibson';
+    src: local('Gibson-Regular'),
+        url('#{$fonts-path}/hinted-Gibson-Regular.woff2') format('woff2'),
+        url('#{$fonts-path}/hinted-Gibson-Regular.woff') format('woff'),
+        url('#{$fonts-path}/hinted-Gibson-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: local('Rubik Light Italic'), local('Rubik-LightItalic'),
+        url('#{$fonts-path}/hinted-Rubik-LightItalic.woff2') format('woff2'),
+        url('#{$fonts-path}/hinted-Rubik-LightItalic.woff') format('woff'),
+        url('#{$fonts-path}/hinted-Rubik-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
