@@ -3,7 +3,6 @@
 const gulp        = require('gulp');
 const babel = require("gulp-babel");
 const browserSync = require('browser-sync').create();
-const imagemin    = require('gulp-imagemin');
 const autoprefixer = require('gulp-autoprefixer');
 const gulpIf = require('gulp-if');
 const sass = require('gulp-sass');
@@ -12,7 +11,6 @@ const removeFiles = require('gulp-remove-files');
 
 gulp.task('images', function () {
     return gulp.src('app/images/*')
-        .pipe(imagemin())
         .pipe(gulp.dest('dist/images'))
 });
 
@@ -32,7 +30,7 @@ gulp.task('clearFonts', function () {
 });
 
 gulp.task('js', function () {
-    return gulp.src(['app/js/*', '!app/js/main.js'])
+    return gulp.src('app/js/*')
         .pipe(gulp.dest('dist/js/'))
 });
 gulp.task('clearjs', function () {
@@ -69,7 +67,7 @@ gulp.task('css', function() {
 
 gulp.task('watch', gulp.series('sasstocss', 'clearFonts', 'fonts','clearjs','js','clearImages', 'images', function () {
     browserSync.init({
-        server: "app",
+        server: true,
         browser: "firefox",
         startPath: "index.html",
         notify: false
@@ -78,7 +76,7 @@ gulp.task('watch', gulp.series('sasstocss', 'clearFonts', 'fonts','clearjs','js'
     gulp.watch('app/fonts/**/*.*', gulp.series('clearFonts','fonts'));
     gulp.watch('app/js/**/*.*', gulp.series('clearjs','js'));
     gulp.watch('app/images/**/*.*', gulp.series('clearImages', 'images'));
-    browserSync.watch(['app/**/*.html','app/**/*.js','app/images/*.*','app/**/*.css','fonts/**/*.*']).on('change', browserSync.reload);
+    browserSync.watch(['*.html','dist/**/*.js','app/images/*.*','dist/**/*.css','dist/fonts/**/*.*']).on('change', browserSync.reload);
 }));
 
 gulp.task('build', gulp.series('images', 'css', 'jsbabel'));

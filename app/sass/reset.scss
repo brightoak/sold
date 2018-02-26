@@ -9,10 +9,10 @@
 h1, h2, h3, h4, h5, h6{
 	margin-bottom:20px;
 	font:800 72px/1.1 $fonts;
-	color: #110a79;
+	color: #313362;
 }
-h2{font-size:54px;}
-h3{font-size:18px;}
+h2{font-size:42px;}
+h3{font-size:36px;}
 h4{font-size:16px;}
 h5{font-size:14px;}
 h6{font-size:12px;}
@@ -42,10 +42,10 @@ input{
 	border-radius:0;
 }
 textarea:extend(input){resize:vertical;}
-input[placeholder]          {text-overflow:ellipsis;}
-input::-moz-placeholder     {text-overflow:ellipsis;}
-input:-moz-placeholder      {text-overflow:ellipsis;}
-input:-ms-input-placeholder {text-overflow:ellipsis;}
+input[placeholder]          {text-overflow:ellipsis;font-style: italic;color: #aaa;}
+input::-moz-placeholder     {text-overflow:ellipsis;font-style: italic;color: #aaa;}
+input:-moz-placeholder      {text-overflow:ellipsis;font-style: italic;color: #aaa;}
+input:-ms-input-placeholder {text-overflow:ellipsis;font-style: italic;color: #aaa;}
 :focus::-webkit-input-placeholder {color: transparent !important;}
 :focus::-moz-placeholder          {color: transparent !important;}
 :focus:-moz-placeholder           {color: transparent !important;}

@@ -1,7 +1,10 @@
 $fonts: Rubik,Arial,sans-serif;
-$bodycolor: #333;
-$linkcolor: #110a79;
-$linkcolorhover: #34b3d1;
+$bodycolor: #777;
+$linkcolor: #06d7c6;
+$linkcolorhover: #0db3a6;
+
+$darklinkcolor: #313362;
+
 $fonts-path: "../fonts" !default;
 $divider: 18.461538462;
 @mixin animation($cssrule: all, $delay:.25s, $effect:ease-in-out) {

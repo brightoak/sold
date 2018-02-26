@@ -1,3 +1,8 @@
 /node_modules
 .tern-project
 /dist
+.babelrc
+.csscomb.json
+gulpfile.js
+package.json
+yarn.lock
