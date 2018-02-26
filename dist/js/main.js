@@ -41,3 +41,17 @@ function inView(){
         });
     }
 }
+
+// 4. show navigation dropdown on mobile devices by click
+let navHolder = document.querySelector('.nav-holder');
+let opener = navHolder.querySelector('.opener');
+if (opener){
+    opener.onclick = () => {
+        navHolder.classList.toggle('opened');
+    }
+    window.onresize = () => {
+        if (navHolder.classList.contains('opened')){
+            navHolder.classList.remove('opened');
+        }
+    }
+}
