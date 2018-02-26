@@ -564,10 +564,10 @@
 	.hero{
 		padding-bottom: 60px;
 		h1{
-			font-size: 31px;
+			font-size: 34px;
 		}
 		h2{
-			font-size: 21px;
+			font-size: 22px;
 		}
 		p{
 			font-size: 16px;
@@ -695,11 +695,11 @@
 			top: 5px;
 			bottom: 5px;
 			right: 5px;
-			padding-top: 42px;
+			padding-top: 50px;
 		}
 		.nav{
 			li{
-				margin-bottom: 12px;
+				margin-bottom: 15px;
 			}
 			.drop{
 				ul{
@@ -710,5 +710,30 @@
 				}
 			}
 		}
+	}
+	#header{
+		border-top-width: 3px;
+		padding-top: 9px;
+		padding-bottom: 54px;
+		.logo{
+			width: 150px;
+			height: 32px;
+			background-size: cover;
+		}
+	}
+	.hero{
+		padding-bottom: 40px;
+		h1{
+			margin-bottom: 8px;
+		}
+		h2{
+			margin-bottom: 12px;
+		}
+		p{
+			margin-bottom: 30px;
+		}
+	}
+	.fouroptions h2{
+		margin-bottom: 30px;
 	}
 }
