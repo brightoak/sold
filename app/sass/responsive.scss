@@ -314,9 +314,85 @@
 		padding-bottom: 45px;
 	}
 	.trendingarticles{
+		h3{
+			text-align: center;
+			margin-bottom: 25px;
+			font-size: 26px;
+		}
 		.box{
-			width:80% !important;
+			width:100% !important;
 			margin: 0 auto 30px;
+			border-radius: 20px;
+			padding: 14px 14px 60px;
+			box-shadow: 0 0 8px #ccc;
+			display: flex;
+			align-content: stretch;
+			margin-bottom: 15px;
+			position: relative;
+			.img{
+				width: 40%;
+				height: auto !important;
+				padding: 5px !important;
+				display: flex;
+				min-height: 140px;
+				img{
+					height: auto !important;
+				}
+			}
+			.text{
+				padding: 0 0 0 12px;
+				width: 60%;
+				h4{
+					font-weight: 400;
+					-webkit-line-clamp: 4;
+					line-height:24px;
+					max-height:96px;
+					font-size: 18px;
+					a{
+						display: inline-block;
+						padding: 4px 0;
+					}
+				}
+			}
+		}
+		.meta{
+			position: absolute;
+			bottom: 10px;
+			left: 0;
+			box-sizing: border-box;
+			padding:0;
+			padding-left: calc(40% + 12px);
+			min-height: 80px;
+			line-height: 1.5;
+			width: 100%;
+			.photo{
+				width: 40%;
+				margin: 0;
+				position: absolute;
+				left: 0;
+				padding-left: 15px;
+				box-sizing: border-box;
+				top: 0;
+				text-align: center;
+				img{
+					display: inline-block;
+				}
+			}
+			.author{
+				float: none;
+				overflow: hidden;
+			}
+			.date{
+				float: none;
+				display: block;
+				margin-top: 10px;
+			}
+		}
+		.tags{
+			position: absolute;
+			bottom: 15px;
+			left: 0;
+			padding-left: calc(40% + 12px);
 		}
 	}
 	#footer{
@@ -362,14 +438,110 @@
 	}
 }
 @media screen and (max-width:500px) {
+	body{
+		background-position: 50% 110px;
+	}
+	#header{
+		padding-top: 12px;
+		padding-bottom: 60px;
+	}
+	.btn{
+		letter-spacing: 1px;
+		box-sizing: border-box;
+		max-width: 285px;
+		width: 100%;
+		margin: 0 auto;
+		line-height: 20px;
+		padding: 20px 15px;
+	}
+	.hero{
+		padding-bottom: 60px;
+		h1{
+			font-size: 31px;
+		}
+		h2{
+			font-size: 21px;
+		}
+		p{
+			font-size: 16px;
+			margin-bottom: 40px;
+		}
+	}
+	.wrapper{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
 	.fouroptions{
+		h2{
+			font-size: 24px;
+			margin-bottom: 32px;
+		}
 		.box{
-			width: 100%;
-			margin-bottom: 20px;
+			width: 48%;
+			margin-bottom:13px;
 			overflow: hidden;
+			padding-left: 5px;
+			padding-right: 5px;
 			.img{
-				margin-top: -80px;
+				margin-top: -20px;
+				margin-bottom:-15px;
 			}
+			h3{
+				font-size: 22px;
+			}
+			p{
+				display: none;
+			}
+		}
+	}
+	.aboutus{
+		text-align: center;
+		h3{
+			font-size: 26px;
+			text-align: left;
+		}
+		.text{
+			font-size: 16px;
+			line-height: 24px;
+			padding-right: 0;
+		}
+		p{
+			text-align: left;
+		}
+	}
+	.guides{
+		h3{
+			text-align: center;
+			margin-bottom: 25px;
+			font-size: 21px;
+			max-width: 180px;
+			margin: 0 auto 30px;
+		}
+	}
+	.guides-list{
+		strong{
+			font-size: 20px;
+		}
+	}
+	.media-partners{
+		padding-top: 0;
+		ul{
+			margin: 0 -15px;
+		}
+		li{
+			width: 25%;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
+	.subscribe-form{
+		.btn,
+		.txt{
+			height: 50px;
+		}
+		.btn{
+			font-size: 13px;
+			letter-spacing: 0;
 		}
 	}
 }

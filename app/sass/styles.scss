@@ -33,7 +33,7 @@ body{
 	border: 2px solid #00d5c4;
 	background: #00d5c4;
 	display: inline-block;
-	box-shadow:0 4px 4px #bbb;
+	box-shadow:0 3px 6px rgba(0,0,0,.2);
 	&:hover{
 		color: #00d5c4;
 		background: #fff;
@@ -273,6 +273,13 @@ body{
 		&:first-child,
 		&:nth-child(2){
 			width: 48.5%;
+			.img{
+				height: 268px;
+				padding: 20px 10px 0;
+				img{
+					height: 100%;
+				}
+			}
 		}
 		margin-bottom: 45px;
 		width: 31%;
@@ -282,9 +289,36 @@ body{
 		background: #fff;
 	}
 	.img{
-		display: block;
+		background-color: #f2f5f7;
+		background-repeat: repeat;
+		text-align: center;
+		padding-top: 20px;
+		box-sizing: border-box;
+		height: 265px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&.pattern-dots{
+			background-image: url(../images/pattern-dots.png);
+		}
+		&.pattern-puzzle{
+			background-image: url(../images/pattern-puzzle.png);
+		}
+		&.pattern-diamonds{
+			background-image: url(../images/pattern-diamonds.png);
+		}
+		&.pattern-dots{
+			background-image: url(../images/pattern-dots.png);
+		}
+		&.pattern-shapes{
+			background-image: url(../images/pattern-shapes.png);
+		}
 		img{
-			@extend .fullwidthimg;
+			display: inline-block;
+			max-width: 100%;
+			max-height: 100%;
+			height: auto;
+			width: auto;
 		}
 	}
 	.text{
@@ -385,7 +419,7 @@ body{
 		display: block;
 		color: $darklinkcolor;
 		&:hover{
-			color: $linkcolorhover;
+			color: $darklinkcolorhover;
 		}
 	}
 	li{
@@ -554,6 +588,8 @@ body{
 		padding-left: 30px;
 		padding-right: 10px;
 		border-radius:50px 0 0 50px;
+		box-sizing: border-box;
+		width: 330px;
 	}
 }
 .btmbar{
