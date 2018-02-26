@@ -3461,15 +3461,6 @@ body{
 .nav li.js-dropdown:hover .drop{
 	display:block;
 }
-.nav li.js-dropdown:after{
-	content:"";
-	background:url(../images/ico-arrow.png) no-repeat;
-	width:22px;
-	height:10px;
-	position:absolute;
-	bottom:-21px;
-	left:30%;
-}
 .nav a{
 	transition:all .25s ease-in-out;
 	display:inline-block;
@@ -3478,9 +3469,9 @@ body{
 	position:absolute;
 	left:-180px;
 	padding-top:40px;
-	display:none;
 	top:0;
 	z-index:15;
+	background:url(../images/ico-arrow.png) no-repeat 50% 0;
 }
 .nav .drop ul{
 	width:400px;
@@ -3853,6 +3844,7 @@ body{
 	float:left;
 	margin-right:90px;
 	display:flex;
+	flex-wrap:nowrap;
 	align-items:center;
 }
 .subscribe-form .set{
@@ -3872,6 +3864,7 @@ body{
 	text-align:center;
 	padding:0;
 	height:60px;
+	border:none;
 }
 .subscribe-form .btn:hover{
 	background:#00d5c4;
@@ -3920,6 +3913,7 @@ body{
 		margin-right:20px;
 		flex-direction:column;
 		align-items:flex-start;
+		flex-wrap:wrap;
 	}
 	.subscribe-form label{
 		padding-bottom:20px;

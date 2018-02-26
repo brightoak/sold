@@ -116,15 +116,16 @@ body{
 					display: block;
 				}
 			}
-			&:after{
-				content: '';
-				background:url(../images/ico-arrow.png) no-repeat;
-				width:22px;
-				height:10px;
-				position: absolute;
-				bottom: -21px;
-				left: 30%;
-			}
+			// &:after{
+			// 	content: '';
+			// 	background:url(../images/ico-arrow.png) no-repeat;
+			// 	width:22px;
+			// 	height:10px;
+			// 	position: absolute;
+			// 	bottom: -21px;
+			// 	left: 30%;
+			// 	z-index: 16;
+			// }
 		}
 	}
 	a{
@@ -135,9 +136,10 @@ body{
 		position: absolute;
 		left: -180px;
 		padding-top: 40px;
-		display: none;
+		// display: none;
 		top: 0;
 		z-index: 15;
+		background:url(../images/ico-arrow.png) no-repeat 50% 0;
 		ul{
 			width: 400px;
 			box-shadow: 0 0 20px #ddd;
@@ -520,6 +522,7 @@ body{
 	float: left;
 	margin-right: 90px;
 	display: flex;
+	flex-wrap: nowrap;
 	align-items: center;
 	.set{
 		display: flex;
@@ -538,6 +541,7 @@ body{
 		text-align: center;
 		padding: 0;
 		height: 60px;
+		border: none;
 		&:hover{
 			background: #00d5c4;
 			color: #fff;
