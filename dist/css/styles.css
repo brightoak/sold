@@ -4628,4 +4628,20 @@ body{
 	.trendingarticles .box{
 		width:100% !important;
 	}
+	.opened.nav-holder .inner{
+		left:5px;
+		top:5px;
+		bottom:5px;
+		right:5px;
+		padding-top:42px;
+	}
+	.opened.nav-holder .nav li{
+		margin-bottom:12px;
+	}
+	.opened.nav-holder .nav .drop ul{
+		padding-top:10px;
+	}
+	.opened.nav-holder .nav .drop li{
+		margin-bottom:10px;
+	}
 }

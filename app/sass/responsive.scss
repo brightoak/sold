@@ -689,4 +689,26 @@
 			width:100% !important;
 		}
 	}
+	.opened.nav-holder{
+		.inner{
+			left: 5px;
+			top: 5px;
+			bottom: 5px;
+			right: 5px;
+			padding-top: 42px;
+		}
+		.nav{
+			li{
+				margin-bottom: 12px;
+			}
+			.drop{
+				ul{
+					padding-top: 10px;
+				}
+				li{
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
 }
