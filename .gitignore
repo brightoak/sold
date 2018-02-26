@@ -1,6 +1,5 @@
 /node_modules
 .tern-project
-/dist
 .babelrc
 .csscomb.json
 gulpfile.js
