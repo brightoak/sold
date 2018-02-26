@@ -3849,6 +3849,7 @@ body{
 }
 .subscribe-form .set{
 	display:flex;
+	flex-wrap:nowrap;
 	align-items:center;
 }
 .subscribe-form label{
