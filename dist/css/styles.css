@@ -4459,6 +4459,9 @@ body{
 	.aboutus p{
 		text-align:left;
 	}
+	.guides{
+		margin:0;
+	}
 	.guides h3{
 		text-align:center;
 		margin-bottom:25px;
@@ -4487,6 +4490,30 @@ body{
 	.subscribe-form .btn{
 		font-size:13px;
 		letter-spacing:0;
+	}
+	.quotes-block .quote:before{
+		margin-bottom:15px;
+	}
+	#footer .subscribe-form{
+		margin-bottom:0;
+	}
+	#footer .wrapper{
+		padding-top:35px;
+	}
+	#footer .logo{
+		width:126px;
+		height:45px;
+		margin-bottom:18px;
+	}
+	.nav-holder{
+		padding-top:0;
+	}
+	.btmbar{
+		font-size:12px;
+		line-height:normal;
+	}
+	.btmbar p{
+		margin-bottom:3px;
 	}
 }
 

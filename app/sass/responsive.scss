@@ -510,6 +510,7 @@
 		}
 	}
 	.guides{
+		margin: 0;
 		h3{
 			text-align: center;
 			margin-bottom: 25px;
@@ -542,6 +543,36 @@
 		.btn{
 			font-size: 13px;
 			letter-spacing: 0;
+		}
+	}
+	.quotes-block{
+		.quote{
+			&:before{
+				margin-bottom: 15px;
+			}
+		}
+	}
+	#footer{
+		.subscribe-form{
+			margin-bottom: 0;
+		}
+		.wrapper{
+			padding-top: 35px;
+		}
+		.logo{
+			width: 126px;
+			height: 45px;
+			margin-bottom: 18px;
+		}
+	}
+	.nav-holder{
+		padding-top: 0;
+	}
+	.btmbar{
+		font-size: 12px;
+		line-height: normal;
+		p{
+			margin-bottom: 3px;
 		}
 	}
 }
