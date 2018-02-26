@@ -3480,6 +3480,7 @@ body{
 	padding-top:40px;
 	display:none;
 	top:0;
+	z-index:15;
 }
 .nav .drop ul{
 	width:400px;
@@ -3998,7 +3999,9 @@ body{
 	.js-flyin.fouroptions .box,
 	.js-flyin.aboutus .text,
 	.js-flyin.aboutus .img,
-	.js-flyin.trendingarticles .box{
+	.js-flyin.trendingarticles .box,
+	.js-flyin.guides-list li,
+	.js-flyin.quotes-block{
 		position:relative;
 		opacity:0;
 	}
@@ -4006,7 +4009,9 @@ body{
 	.js-inview.fouroptions .box,
 	.js-inview.aboutus .text,
 	.js-inview.aboutus .img,
-	.js-inview.trendingarticles .box{
+	.js-inview.trendingarticles .box,
+	.js-inview.guides-list li,
+	.js-inview.quotes-block{
 		animation-duration:.8s;
 		animation-timing-function:ease-in-out;
 		animation-delay:0;
@@ -4068,6 +4073,39 @@ body{
 	.js-inview.trendingarticles .box:nth-child(10){
 		animation-delay:3s;
 	}
+	.js-inview.guides-list li{
+		animation-name:fadeInDown;
+	}
+	.js-inview.guides-list li:nth-child(2){
+		animation-delay:.4s;
+	}
+	.js-inview.guides-list li:nth-child(3){
+		animation-delay:.6s;
+	}
+	.js-inview.guides-list li:nth-child(4){
+		animation-delay:.8s;
+	}
+	.js-inview.guides-list li:nth-child(5){
+		animation-delay:1s;
+	}
+	.js-inview.guides-list li:nth-child(6){
+		animation-delay:1.2s;
+	}
+	.js-inview.guides-list li:nth-child(7){
+		animation-delay:1.4s;
+	}
+	.js-inview.guides-list li:nth-child(8){
+		animation-delay:1.6s;
+	}
+	.js-inview.guides-list li:nth-child(9){
+		animation-delay:1.8s;
+	}
+	.js-inview.guides-list li:nth-child(10){
+		animation-delay:2s;
+	}
+	.js-inview.quotes-block{
+		animation-name:fadeInDown;
+	}
 	@keyframes fadeIn{
 		from{
 			opacity:0;
@@ -4093,6 +4131,16 @@ body{
 		}
 		to{
 			right:0;
+			opacity:1;
+		}
+	}
+	@keyframes fadeInDown{
+		from{
+			bottom:-50px;
+			opacity:0;
+		}
+		to{
+			bottom:0;
 			opacity:1;
 		}
 	}

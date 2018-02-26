@@ -121,6 +121,14 @@
 				@extend .animated;
 			}
 		}
+		&.guides-list{
+			li{
+				@extend .animated;
+			}
+		}
+		&.quotes-block{
+			@extend .animated;
+		}
 	}
 	.js-inview{
 		&.hero{
@@ -167,6 +175,21 @@
 				}
 			}
 		}
+		&.guides-list{
+			li{
+				@extend .animation;
+				animation-name: fadeInDown;
+				@for $i from 2 through 10{
+					&:nth-child(#{$i}){
+						animation-delay:.2s * $i;
+					}
+				}
+			}
+		}
+		&.quotes-block{
+			@extend .animation;
+			animation-name: fadeInDown;
+		}
 	}
 	@keyframes fadeIn{
 		from {
@@ -193,6 +216,16 @@
 		}
 		to{
 			right: 0;
+			opacity: 1;
+		}
+	}
+	@keyframes fadeInDown{
+		from {
+			bottom: -50px;
+			opacity:0;
+		}
+		to{
+			bottom: 0;
 			opacity: 1;
 		}
 	}
