@@ -4194,6 +4194,7 @@ body{
 @media screen and (max-width: 768px){
 	#container{
 		background:none;
+		padding-bottom:30px;
 	}
 	body{
 		background:#fff url(../images/homepage-bg-mobile.png) no-repeat 50% 200px;
@@ -4230,7 +4231,8 @@ body{
 		padding:60px 0 0;
 	}
 	.opened.nav-holder .nav{
-		display:block;
+		display:flex;
+		flex-direction:column;
 		overflow:auto;
 		text-transform:none;
 		font-weight:400;
@@ -4248,6 +4250,9 @@ body{
 	}
 	.opened.nav-holder .nav li.js-dropdown > a:before{
 		display:none;
+	}
+	.opened.nav-holder .nav li:nth-child(2){
+		order:-1;
 	}
 	.opened.nav-holder .nav .drop{
 		position:static;
@@ -4360,9 +4365,6 @@ body{
 	.guides-list img{
 		width:80%;
 		margin:0 auto 14px;
-	}
-	#container{
-		padding-bottom:30px;
 	}
 }
 
@@ -4498,7 +4500,7 @@ body{
 
 @media screen and (max-width: 500px){
 	body{
-		background-position:50% 110px;
+		background-position:50% 88px;
 	}
 	#header{
 		padding-top:12px;
@@ -4600,6 +4602,9 @@ body{
 	}
 	.quotes-block .quote:before{
 		margin-bottom:15px;
+	}
+	#container{
+		background:url(../images/bg-page-b-mobile.png) no-repeat 50% 99%;
 	}
 	#footer .subscribe-form{
 		margin-bottom:0;
