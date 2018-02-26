@@ -3469,9 +3469,19 @@ body{
 	position:absolute;
 	left:-180px;
 	padding-top:40px;
+	display:none;
 	top:0;
 	z-index:15;
+}
+.nav .drop:after{
+	content:"";
 	background:url(../images/ico-arrow.png) no-repeat 50% 0;
+	width:100%;
+	height:10px;
+	position:absolute;
+	top:30px;
+	left:0;
+	z-index:16;
 }
 .nav .drop ul{
 	width:400px;
