@@ -23,3 +23,21 @@ if (quotesSlider){
       lazyload: true
     });
 }
+
+// 3. adding animations to elements in current viewport
+let sections = document.querySelectorAll('.js-flyin');
+if (sections.length > 0){
+    inView();
+    window.onscroll = () =>{
+        inView();
+    }
+}
+function inView(){
+    if (window.innerWidth > 768) {
+        sections.forEach((section) => {
+            if (inViewport(section, { offset: -300 })) {
+                section.classList.add('js-inview');
+            }
+        });
+    }
+}

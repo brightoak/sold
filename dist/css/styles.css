@@ -3992,6 +3992,112 @@ body{
 	}
 }
 
+@media screen and (min-width: 769px){
+	.animated,
+	.js-flyin.hero .text,
+	.js-flyin.fouroptions .box,
+	.js-flyin.aboutus .text,
+	.js-flyin.aboutus .img,
+	.js-flyin.trendingarticles .box{
+		position:relative;
+		opacity:0;
+	}
+	.animation,
+	.js-inview.fouroptions .box,
+	.js-inview.aboutus .text,
+	.js-inview.aboutus .img,
+	.js-inview.trendingarticles .box{
+		animation-duration:.8s;
+		animation-timing-function:ease-in-out;
+		animation-delay:0;
+		animation-fill-mode:forwards;
+	}
+	.js-flyin.hero .text{
+		top:-60px;
+		transition:all .8s ease-in-out;
+	}
+	.js-inview.hero .text{
+		opacity:1;
+		top:0;
+	}
+	.js-inview.fouroptions .box:nth-child(1),
+	.js-inview.fouroptions .box:nth-child(2){
+		animation-name:fadeInLeft;
+	}
+	.js-inview.fouroptions .box:nth-child(3),
+	.js-inview.fouroptions .box:nth-child(4){
+		animation-name:fadeInRight;
+	}
+	.js-inview.fouroptions .box:nth-child(1),
+	.js-inview.fouroptions .box:nth-child(4){
+		animation-delay:.8s;
+	}
+	.js-inview.aboutus .text{
+		animation-name:fadeInLeft;
+	}
+	.js-inview.aboutus .img{
+		animation-name:fadeInRight;
+	}
+	.js-inview.trendingarticles .box{
+		animation-name:fadeIn;
+	}
+	.js-inview.trendingarticles .box:nth-child(2){
+		animation-delay:.6s;
+	}
+	.js-inview.trendingarticles .box:nth-child(3){
+		animation-delay:.9s;
+	}
+	.js-inview.trendingarticles .box:nth-child(4){
+		animation-delay:1.2s;
+	}
+	.js-inview.trendingarticles .box:nth-child(5){
+		animation-delay:1.5s;
+	}
+	.js-inview.trendingarticles .box:nth-child(6){
+		animation-delay:1.8s;
+	}
+	.js-inview.trendingarticles .box:nth-child(7){
+		animation-delay:2.1s;
+	}
+	.js-inview.trendingarticles .box:nth-child(8){
+		animation-delay:2.4s;
+	}
+	.js-inview.trendingarticles .box:nth-child(9){
+		animation-delay:2.7s;
+	}
+	.js-inview.trendingarticles .box:nth-child(10){
+		animation-delay:3s;
+	}
+	@keyframes fadeIn{
+		from{
+			opacity:0;
+		}
+		to{
+			opacity:1;
+		}
+	}
+	@keyframes fadeInLeft{
+		from{
+			left:-150px;
+			opacity:0;
+		}
+		to{
+			left:0;
+			opacity:1;
+		}
+	}
+	@keyframes fadeInRight{
+		from{
+			right:-150px;
+			opacity:0;
+		}
+		to{
+			right:0;
+			opacity:1;
+		}
+	}
+}
+
 @media screen and (max-width: 768px){
 	#container{
 		background:none;
