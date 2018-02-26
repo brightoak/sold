@@ -4449,6 +4449,14 @@ body{
 		bottom:15px;
 		left:0;
 		padding-left:calc(40% + 12px);
+		white-space:nowrap;
+	}
+	.trendingarticles .tags li{
+		padding-left:5px;
+	}
+	.trendingarticles .tags li:after{
+		left:-1px;
+		top:2px;
 	}
 	#footer .nav-holder{
 		display:none;
