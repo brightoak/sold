@@ -1,3 +1,13 @@
+@media screen and (max-width:1700px) {
+	.hero-inner{
+		&.gavel{
+			&:before{
+				left: auto;
+				right: 64%;
+			}
+		}
+	}
+}
 @media screen and (max-width:1600px) {
 	.subscribe-form{
 		margin-right: 20px;
@@ -31,6 +41,11 @@
 	}
 }
 @media screen and (max-width:1000px) {
+	.hero-inner{
+		&:before{
+			display: none !important;
+		}
+	}
 	#footer{
 		.logo{
 			margin: 0 auto 25px;
@@ -100,7 +115,7 @@
 		&.hero{
 			.text{
 				@extend .animated;
-				top: -60px;
+				bottom: -60px;
 				@include animation($delay:.8s);
 			}
 		}
@@ -109,6 +124,12 @@
 				@extend .animated;
 			}
 		}
+		&.features-list{
+			li{
+				@extend .animated;
+			}
+		}
+		&.about-section,
 		&.aboutus{
 			.text{
 				@extend .animated;
@@ -130,12 +151,17 @@
 		&.quotes-block{
 			@extend .animated;
 		}
+		&.contact-us{
+			.contact-form{
+				@extend .animated;
+			}
+		}
 	}
 	.js-inview{
 		&.hero{
 			.text{
 				opacity:1;
-				top: 0;
+				bottom: 0;
 			}
 		}
 		&.fouroptions{
@@ -155,6 +181,7 @@
 				}
 			}
 		}
+		&.about-section,
 		&.aboutus{
 			.text{
 				@extend .animation;
@@ -167,6 +194,17 @@
 		}
 		&.trendingarticles{
 			.box{
+				@extend .animation;
+				animation-name: fadeIn;
+				@for $i from 2 through 10{
+					&:nth-child(#{$i}){
+						animation-delay:.3s * $i;
+					}
+				}
+			}
+		}
+		&.features-list{
+			li{
 				@extend .animation;
 				animation-name: fadeIn;
 				@for $i from 2 through 10{
@@ -190,6 +228,12 @@
 		&.quotes-block{
 			@extend .animation;
 			animation-name: fadeInDown;
+		}
+		&.contact-us{
+			.contact-form{
+				@extend .animation;
+				animation-name: fadeInDown;
+			}
 		}
 	}
 	@keyframes fadeIn{
@@ -233,6 +277,14 @@
 }
 
 @media screen and (max-width:768px) {
+	.about-section{
+		.text{
+			width: 100%;
+		}
+		.img{
+			display: none;
+		}
+	}
 	#container{
 		background: none;
 		padding-bottom: 30px;
@@ -296,9 +348,6 @@
 				&:nth-child(2){
 					order:-1;
 				}
-				// &:nth-child(1){
-				// 	order:1;
-				// }
 			}
 			.drop{
 				position: static;
@@ -394,6 +443,13 @@
 			font-size: 40px;
 		}
 	}
+	.hero-inner{
+		padding-top: 0;
+		height: auto;
+		&:after{
+			display: none;
+		}
+	}
 	.guides{
 		margin-bottom: 30px;
 	}
@@ -413,6 +469,24 @@
 			width: 80%;
 			margin: 0 auto 14px;
 		}
+	}
+	.about-section{
+		margin-bottom: 70px;
+	}
+	.features{
+		padding-bottom: 50px;
+		h3{
+			margin-bottom: 30px;
+		}
+		.features-list{
+			columns: 1;
+		}
+		li{
+			padding-bottom: 15px;
+		}
+	}
+	#container{
+		background:url(../images/bg-page-b-mobile.png) repeat-x 50% 99%;
 	}
 }
 @media screen and (max-width:600px) {
@@ -567,6 +641,7 @@
 		margin: 0 auto;
 		line-height: 20px;
 		padding: 20px 15px;
+		text-align: center;
 	}
 	.hero{
 		padding-bottom: 60px;
@@ -666,9 +741,6 @@
 			}
 		}
 	}
-	#container{
-		background:url(../images/bg-page-b-mobile.png) no-repeat 50% 99%;
-	}
 	#footer{
 		.subscribe-form{
 			margin-bottom: 0;
@@ -692,8 +764,23 @@
 			margin-bottom: 3px;
 		}
 	}
+	.hero-inner{
+		padding-bottom: 0;
+	}
 }
 @media screen and (max-width:414px) {
+	.contact-form{
+		padding: 20px 20px 40px;
+	}
+	.features{
+		padding-bottom: 20px;
+		h4{
+			margin-bottom: 10px;
+		}
+		li{
+			padding-left: 60px;
+		}
+	}
 	.trendingarticles{
 		.box{
 			width:100% !important;
@@ -708,6 +795,7 @@
 			padding-top: 50px;
 		}
 		.nav{
+			max-height: calc(100% - 80px);
 			li{
 				margin-bottom: 15px;
 			}
@@ -745,5 +833,8 @@
 	}
 	.fouroptions h2{
 		margin-bottom: 30px;
+	}
+	.hero-inner{
+		padding: 0;
 	}
 }
