@@ -3601,11 +3601,18 @@ body.home{
 	box-sizing:border-box;
 	margin-bottom:40px;
 }
-.fouroptions h3{
+.fouroptions .h3{
 	font-weight:bold;
 	font-size:24px;
 	margin-bottom:14px;
 	color:#fff;
+	display:block;
+}
+.fouroptions .p{
+	display:block;
+	color:#d2c8e7;
+	font-weight:300;
+	margin-bottom:18px;
 }
 .fouroptions .img{
 	display:block;
@@ -4769,10 +4776,10 @@ body.home{
 		margin-top:-20px;
 		margin-bottom:-15px;
 	}
-	.fouroptions .box h3{
+	.fouroptions .box .h3{
 		font-size:22px;
 	}
-	.fouroptions .box p{
+	.fouroptions .box .p{
 		display:none;
 	}
 	.aboutus{

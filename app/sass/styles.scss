@@ -254,11 +254,18 @@ body{
 		box-sizing: border-box;
 		margin-bottom: 40px;
 	}
-	h3{
+	.h3{
 		font-weight: bold;
 		font-size: 24px;
 		margin-bottom: 14px;
 		color: #fff;
+		display: block;
+	}
+	.p{
+		display: block;
+		color: #d2c8e7;
+		font-weight: 300;
+		margin-bottom: 18px;
 	}
 	.img{
 		display: block;
