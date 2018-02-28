@@ -663,6 +663,7 @@ body{
 	}
 	.img{
 		width: 47%;
+		max-width: 545px;
 		img{
 			@extend .fullwidthimg;
 		}

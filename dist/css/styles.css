@@ -4003,6 +4003,7 @@ body.home{
 }
 .about-section .img{
 	width:47%;
+	max-width:545px;
 }
 .about-section .market-logo{
 	display:block;
