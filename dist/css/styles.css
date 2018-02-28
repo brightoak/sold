@@ -3452,6 +3452,10 @@ body.home{
 	float:left;
 	position:relative;
 	margin-right:30px;
+	z-index:16;
+}
+.nav li.js-dropdown{
+	z-index:15;
 }
 .nav li.js-dropdown > a{
 	padding-right:13px;

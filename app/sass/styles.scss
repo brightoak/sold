@@ -103,7 +103,9 @@ body{
 		float: left;
 		position: relative;
 		margin-right: 30px;
+		z-index: 16;
 		&.js-dropdown{
+			z-index: 15;
 			& > a{
 				padding-right: 13px;
 				&:before{
