@@ -67,7 +67,7 @@ function contactFormValidation(){
     fields.forEach((field) => {
         if (field.classList.contains('js-error')){
             field.classList.remove('js-error');
-            field.parentNode.removeChild(field.parentNode.querySelector('.error-text'));
+            field.parentNode.removeChild(field.parentNode.querySelector('.js-error-text'));
         }
         if (field.value.length < 3){
             let errorText = field.parentNode.querySelector('label').textContent + ' is required!';
