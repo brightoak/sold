@@ -92,20 +92,30 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquam velit quis ex ornare volutpat. Nunc ullamcorper sem et neque blandit porttitor.</p>
         </div>
         <form action="" class="contact-form">
-          <div class="field">
-            <label for="name">Name</label>
-            <input type="text" class="txt" id="name">
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input type="email" class="txt" id="email">
-          </div>
-          <div class="field">
-            <label for="phonenumber">Phone Number</label>
-            <input type="tel" class="txt" id="phonenumber">
-          </div>
-          <button type="button" class="btn"><i class="fa fa-paper-plane" aria-hidden="true"></i>
- Send Info</button>
+          <div class="fieldset">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" class="txt required" id="name">
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" class="txt required" id="email">
+            </div>
+            <div class="field">
+              <label for="phonenumber">Phone Number</label>
+              <input type="tel" class="txt" id="phonenumber">
+            </div>
+            <button type="button" class="btn"><i class="fa fa-paper-plane" aria-hidden="true"></i>
+   Send Info</button>
+         </div>
+         <div class="completed">
+           <span class="img">
+             <img src="/dist/images/img-request-completed.png" alt="" width="171" height="156">
+           </span>
+           <strong class="title">Your request is complete</strong>
+           <p>You will hear back from a Sold.com Home Sales Consultant within 1-2 days.</p>
+           <a href="" class="btn">View our guides</a>
+         </div>
         </form>
       </div>
     </div>

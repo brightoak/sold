@@ -3600,6 +3600,7 @@ body.home{
 	padding:0 25px 25px;
 	box-sizing:border-box;
 	margin-bottom:40px;
+	display:block;
 }
 .fouroptions .h3{
 	font-weight:bold;
@@ -4063,6 +4064,7 @@ body.home{
 	border-radius:10px;
 	padding:50px 30px 40px;
 	box-sizing:border-box;
+	position:relative;
 }
 .contact-form .field{
 	max-width:414px;
@@ -4092,6 +4094,22 @@ body.home{
 .contact-form .txt:focus{
 	border-color:#999;
 }
+.contact-form .txt:invalid{
+	box-shadow:none;
+}
+.contact-form .txt.js-error{
+	border-color:red;
+}
+.contact-form .txt.js-error + .js-error-text{
+	display:block;
+}
+.contact-form .js-error-text{
+	font-size:14px;
+	font-style:italic;
+	color:red;
+	margin:0;
+	display:none;
+}
 .contact-form .btn{
 	width:100%;
 	letter-spacing:2px;
@@ -4101,6 +4119,45 @@ body.home{
 	outline:none !important;
 	margin-top:10px;
 	display:block;
+	box-sizing:border-box;
+	text-align:center;
+}
+.contact-form .completed{
+	text-align:center;
+	padding:8px 0;
+	position:absolute;
+	left:0;
+	top:0;
+	opacity:0;
+	transition:all .25s ease-in-out;
+}
+.contact-form .completed .img{
+	display:block;
+	margin-bottom:16px;
+}
+.contact-form .completed .title{
+	display:block;
+	font-size:24px;
+	color:#2f305d;
+	margin-bottom:18px;
+}
+.contact-form .completed .btn{
+	width:auto;
+	display:inline-block;
+}
+.contact-form .fieldset{
+	position:relative;
+	z-index:1;
+}
+.contact-form.js-validform .fieldset{
+	opacity:0;
+	position:absolute;
+	z-index:0;
+}
+.contact-form.js-validform .completed{
+	position:relative;
+	opacity:1;
+	z-index:1;
 }
 
 @media screen and (max-width: 1700px){

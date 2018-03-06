@@ -725,6 +725,7 @@ body{
 	border-radius:10px;
 	padding: 50px 30px 40px;
 	box-sizing: border-box;
+	position: relative;
 	.field{
 		max-width: 414px;
 		margin: 0 auto 30px;
@@ -752,6 +753,22 @@ body{
 		&:focus{
 			border-color: #999;
 		}
+		&:invalid{
+			box-shadow: none;
+		}
+		&.js-error{
+			border-color: red;
+			& + .js-error-text{
+				display: block;
+			}
+		}
+	}
+	.js-error-text{
+		font-size: 14px;
+		font-style: italic;
+		color: red;
+		margin: 0;
+		display: none;
 	}
 	.btn{
 		width: 100%;
@@ -762,6 +779,45 @@ body{
 		outline: none !important;
 		margin-top: 10px;
 		display: block;
+		box-sizing: border-box;
+		text-align: center;
+	}
+	.completed{
+		text-align: center;
+		padding: 8px 0;
+		position: absolute;
+		left: 0;
+		top: 0;
+		opacity: 0;
+		@include animation;
+		.img{
+			display: block;
+			margin-bottom: 16px;
+		}
+		.title{
+			display: block;
+			font-size: 24px;
+			color: #2f305d;
+			margin-bottom: 18px;
+		}
+		.btn{
+			width: auto;
+			display: inline-block;
+		}
+	}
+	.fieldset{
+		position: relative;
+		z-index: 1;
+	}
+	&.js-validform .fieldset{
+		opacity:0;
+		position: absolute;
+		z-index: 0;
+	}
+	&.js-validform .completed{
+		position: relative;
+		opacity: 1;
+		z-index: 1;
 	}
 }
 @import "responsive";
