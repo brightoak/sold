@@ -58,8 +58,10 @@ if (opener){
 
 // 4. Contact Form Falidation
 let contactForm = document.querySelector('.contact-form');
-contactForm.querySelector('.btn').onclick = () => {
-    contactFormValidation();
+if (contactForm){
+    contactForm.querySelector('.btn').onclick = () => {
+        contactFormValidation();
+    }
 }
 function contactFormValidation(){
     let fields = contactForm.querySelectorAll('.required');
@@ -98,3 +100,6 @@ function validationError(field, errorText){
     p.classList.add('js-error-text');
     field.parentNode.appendChild(p);
 }
+
+// 5. ScrollTo
+new SmoothScroll('a.scrollto[href*="#"]');
