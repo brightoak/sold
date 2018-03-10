@@ -147,21 +147,21 @@ if (howitworksPopup){
     let fader = document.createElement('span');
     let body = document.querySelector('body');
     let close = howitworksPopup.querySelector('.close');
-    let left = window.outerWidth/2 - howitworksPopup.clientWidth/2 + 'px';
-    let top = window.outerHeight/2 - howitworksPopup.clientHeight/2 + 'px';
+    let popupLeft = window.outerWidth/2 - howitworksPopup.clientWidth/2 + 'px';
+    let popupTop = window.outerHeight/2 - howitworksPopup.clientHeight/2 + 'px';
 
-    howitworksPopup.style.left = left;
-    howitworksPopup.style.top = top;
+    howitworksPopup.style.left = popupLeft;
+    howitworksPopup.style.top = popupTop;
 
     fader.setAttribute('id', 'fader');
     popupOpener.onclick = (e) => {
         e.preventDefault();
         body.appendChild(fader);
         howitworksPopup.classList.add('js-visible');
-        left = window.outerWidth/2 - howitworksPopup.clientWidth/2 + 'px';
-        top = window.outerHeight/2 - howitworksPopup.clientHeight/2 + 'px';
-        howitworksPopup.style.left = left;
-        howitworksPopup.style.top = top;
+        popupLeft = window.outerWidth/2 - howitworksPopup.clientWidth/2 + 'px';
+        popupTop = window.outerHeight/2 - howitworksPopup.clientHeight/2 + 'px';
+        howitworksPopup.style.left = popupLeft;
+        howitworksPopup.style.top = popupTop;
     };
     if (howitworksPopup.classList.contains('js-visible')){
 
