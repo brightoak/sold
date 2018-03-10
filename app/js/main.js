@@ -1,5 +1,19 @@
 'use strict';
 
+/*****
+
+    1. adding class to <li> with dropdow in #nav
+    2. slider in testimonials block
+    3. adding animations to elements in current viewport
+    4. Show navigation dropdown on mobile devices by click
+    5. Contact Form Falidation
+    6. ScrollTo
+    7. Sticky Nav
+    8. How it works popup
+
+****/
+
+
 // 1. adding class to <li> with dropdow in #nav
 let nav = document.querySelectorAll('.nav-holder');
 if (nav.length > 0){
@@ -42,7 +56,7 @@ function inView(){
     }
 }
 
-// 4. show navigation dropdown on mobile devices by click
+// 4. Show navigation dropdown on mobile devices by click
 let navHolder = document.querySelector('.nav-holder');
 let opener = navHolder.querySelector('.opener');
 if (opener){
@@ -56,7 +70,7 @@ if (opener){
     }
 }
 
-// 4. Contact Form Falidation
+// 5. Contact Form Falidation
 let contactForm = document.querySelector('.contact-form');
 if (contactForm){
     contactForm.querySelector('.btn').onclick = () => {
@@ -101,5 +115,70 @@ function validationError(field, errorText){
     field.parentNode.appendChild(p);
 }
 
-// 5. ScrollTo
+// 6. ScrollTo
 new SmoothScroll('a.scrollto[href*="#"]');
+
+// 7. Sticky Header
+let header = document.getElementById('header');
+if (header){
+    let headerH = header.offsetHeight + 50;
+    let body = document.querySelector('body');
+    let bodyHeight = body.clientHeight;
+    let windowHeight = window.outerHeight;
+    let span = document.createElement('span');
+    span.classList.add('js-progressbar');
+    header.appendChild(span);
+    document.onscroll = (e) =>{
+        let y = window.scrollY;
+        if (y > headerH){
+            body.classList.add('js-sticky');
+            span.style.width = (y+windowHeight)/bodyHeight * 100 + '%';
+        }
+        else{
+            body.classList.remove('js-sticky');
+        }
+    }
+}
+
+// 8. How it works popup
+let howitworksPopup = document.querySelector('.howitworks-popup');
+if (howitworksPopup){
+    let popupOpener = document.querySelector('.popup-opener');
+    let fader = document.createElement('span');
+    let body = document.querySelector('body');
+    let close = howitworksPopup.querySelector('.close');
+    let left = window.outerWidth/2 - howitworksPopup.clientWidth/2 + 'px';
+    let top = window.outerHeight/2 - howitworksPopup.clientHeight/2 + 'px';
+
+    howitworksPopup.style.left = left;
+    howitworksPopup.style.top = top;
+
+    fader.setAttribute('id', 'fader');
+    popupOpener.onclick = (e) => {
+        e.preventDefault();
+        body.appendChild(fader);
+        howitworksPopup.classList.add('js-visible');
+        left = window.outerWidth/2 - howitworksPopup.clientWidth/2 + 'px';
+        top = window.outerHeight/2 - howitworksPopup.clientHeight/2 + 'px';
+        howitworksPopup.style.left = left;
+        howitworksPopup.style.top = top;
+    };
+    if (howitworksPopup.classList.contains('js-visible')){
+
+    }
+    fader.onclick = () => {
+        removePopup()
+    };
+    close.onclick = () => {
+        removePopup()
+    };
+    window.onresize = () => {
+        removePopup()
+    };
+    function removePopup(){
+        if (howitworksPopup.classList.contains('js-visible')){
+            howitworksPopup.classList.remove('js-visible');
+            body.removeChild(fader);
+        }
+    }
+}

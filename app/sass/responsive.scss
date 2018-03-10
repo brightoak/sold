@@ -8,6 +8,27 @@
 		}
 	}
 }
+@media screen and (max-width:1640px) {
+	.points3{
+		.holder{
+			background: none;
+			opacity: 1 !important;
+			height: auto;
+			padding-bottom: 50px;
+		}
+		.text-block{
+			position: static !important;
+			text-align: center;
+			width: 600px !important;
+			max-width: 100%;
+			margin: 0 auto 50px;
+			opacity: 1 !important;
+		}
+		.vision{
+			text-align: center;
+		}
+	}
+}
 @media screen and (max-width:1600px) {
 	.subscribe-form{
 		margin-right: 20px;
@@ -37,6 +58,21 @@
 		}
 		.wrapper{
 			padding-bottom: 20px;
+		}
+	}
+}
+@media screen and (max-width:1250px) {
+	.guide-overview .hero .person{
+		display: none;
+	}
+}
+@media screen and (max-width:1110px) {
+	.nextsteps{
+		li{
+			&:after{
+				width: 75px;
+				right: -35px;
+			}
 		}
 	}
 }
@@ -98,8 +134,64 @@
 			}
 		}
 	}
+	.howitworks-popup{
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-bottom: 30px;
+		ul{
+			margin-left: -15px;
+			margin-right: -15px;
+			flex-wrap: wrap;
+			margin-bottom: 30px;
+		}
+		li{
+			padding: 0 15px;
+			width: calc(100% / 2);
+			&:after{
+				display: none;
+			}
+		}
+		.img{
+			max-width: 228px;
+			margin: 0 auto 20px;
+		}
+	}
+	.nextsteps{
+		margin-bottom: 100px;
+		.ico{
+			margin-bottom: 20px;
+		}
+		ul{
+			flex-direction: column;
+			align-items: center;
+		}
+		li{
+			padding-bottom: 100px;
+			width: 181px;
+			padding-left: 0;
+			padding-right: 0;
+			&:after{
+				top: auto;
+				right: 56px;
+				bottom:55px;
+				transform: rotate(90deg);
+			}
+			&:last-child{
+				padding-bottom: 0;
+			}
+		}
+	}
 }
-
+@media screen and (max-height:700px) {
+	.howitworks-popup{
+		position: absolute !important;
+		top: 20px !important;
+		left: 20px !important;
+		h4{
+			margin-bottom: 20px;
+		}
+	}
+}
 @media screen and (min-width:769px) {
 	.animated{
 		position: relative;
@@ -129,6 +221,7 @@
 				@extend .animated;
 			}
 		}
+		&.endcta,
 		&.about-section,
 		&.aboutus{
 			.text{
@@ -154,6 +247,46 @@
 		&.contact-us{
 			.contact-form{
 				@extend .animated;
+			}
+		}
+		&.points3{
+			.text-block,
+			.holder{
+				@extend .animated;
+			}
+		}
+		&.contactus{
+			.data,
+			.map{
+				@extend .animated;
+			}
+		}
+		&.ourteam{
+			li{
+				@extend .animated;
+			}
+		}
+
+	}
+	.guide-section{
+		.item.js-flyin{
+			.text,
+			.img{
+				@extend .animated;
+			}
+		}
+	}
+	.guide-overview{
+		.hero.js-flyin{
+			@extend .animated;
+			.person,
+			.hero-holder,
+			.hero-i{
+				@extend .animated;
+			}
+			.text{
+				bottom: auto !important;
+				opacity: 1 !important;
 			}
 		}
 	}
@@ -192,6 +325,16 @@
 				animation-name: fadeInRight;
 			}
 		}
+		&.endcta{
+			.text{
+				@extend .animation;
+				animation-name: fadeInRight;
+			}
+			.img{
+				@extend .animation;
+				animation-name: fadeInLeft;
+			}
+		}
 		&.trendingarticles{
 			.box{
 				@extend .animation;
@@ -225,6 +368,17 @@
 				}
 			}
 		}
+		&.ourteam{
+			li{
+				@extend .animation;
+				animation-name: fadeIn;
+				@for $i from 1 through 50{
+					&:nth-child(#{$i}){
+						animation-delay:.1s * $i;
+					}
+				}
+			}
+		}
 		&.quotes-block{
 			@extend .animation;
 			animation-name: fadeInDown;
@@ -233,6 +387,71 @@
 			.contact-form{
 				@extend .animation;
 				animation-name: fadeInDown;
+			}
+		}
+		&.points3{
+			.text-block,
+			.holder{
+				@extend .animation;
+				animation-name: fadeIn;
+			}
+			.text-block{
+				@for $i from 1 through 4{
+					&:nth-child(#{$i}){
+						animation-delay:.4s * $i;
+					}
+				}
+			}
+		}
+		&.contactus{
+			.data,
+			.map{
+				@extend .animation;
+				animation-name: fadeInLeft;
+			}
+			.data{
+				animation-name: fadeInRight;
+			}
+		}
+	}
+	.guide-overview{
+		.hero.js-inview{
+			@extend .animation;
+			animation-name: fadeIn;
+			.person,
+			.hero-holder,
+			.hero-i{
+				@extend .animation;
+				animation-name: fadeIn;
+				animation-delay:.2s;
+			}
+			.hero-holder{
+				animation-delay:.4s;
+				animation-name: fadeInDown;
+			}
+			.person{
+				animation-delay:1s;
+				animation-name: fadeInLeft;
+			}
+		}
+	}
+	.guide-section{
+		.item.js-inview{
+			.text,
+			.img{
+				@extend .animation;
+				animation-name: fadeInLeft;
+			}
+			.img{
+				animation-name: fadeInRight;
+			}
+			&.item-r{
+				.img{
+					animation-name: fadeInLeft;
+				}
+				.text{
+					animation-name: fadeInRight;
+				}
 			}
 		}
 	}
@@ -324,7 +543,7 @@
 			background: #fff;
 			border-radius: 10px;
 			z-index: 100;
-			padding: 60px 0 0;
+			padding: 50px 0 0;
 		}
 		.nav{
 			display: flex;
@@ -335,7 +554,7 @@
 			font-size: 16px;
 			float: none;
 			padding:0 20px;
-			max-height: calc(100% - 65px);
+			max-height: calc(100% - 74px);
 			li{
 				float: none;
 				margin: 0 0 16px;
@@ -487,6 +706,131 @@
 	}
 	#container{
 		background:url(../images/bg-page-b-mobile.png) repeat-x 50% 99%;
+	}
+	.guide-section{
+		background: none;
+		padding-bottom: 0;
+		& + .guide-section{
+			margin-top: 0;
+		}
+		&-l{
+			margin-bottom: 70px;
+		}
+		.item{
+			flex-direction: column-reverse !important;
+			margin-bottom:50px;
+			.text,
+			.img{
+				width: 100%;
+				max-width: 100%;
+			}
+			.img{
+				margin-bottom: 50px;
+				text-align: center;
+				img{
+					display: inline-block;
+				}
+			}
+		}
+	}
+	.team-list{
+		li{
+			width: calc(100% / 3);
+			padding-bottom: 30px;
+		}
+	}
+	.contactus,
+	.ourteam{
+		margin-bottom: 50px;
+	}
+	.guide-content{
+		padding-left: 20px;
+		padding-right: 20px;
+		.wrapper{
+			max-width: 100%;
+			padding: 0 0 80px;
+		}
+		.img-holder{
+			margin-left: 0;
+			margin-right: 0;
+		}
+		.tip{
+			margin-left: 0;
+			margin-right: 0;
+		}
+		.footer{
+			margin-left: 0;
+			margin-right: 0;
+			.btns{
+				display: flex;
+				justify-content: space-between;
+				.btn{
+					width: 48%;
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
+		}
+	}
+	.endcta{
+		flex-direction: column;
+		margin-bottom: 70px;
+		.img{
+			width: 100%;
+			img{
+				margin: 0 auto;
+			}
+		}
+		.text{
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
+@media screen and (min-width:601px) {
+	.js-sticky{
+		&.innerpage,
+		&.home{
+			#container{
+				padding-top: 176px;
+			}
+		}
+		#header{
+			position: fixed;
+			background: #fff;
+			padding:16px 0 28px;
+			box-shadow: 0 0 9px rgba(0,0,0,.1);
+			width: 100%;
+			left: 0;
+			top: 0;
+			z-index: 101;
+			border-top: none;
+			.logo{
+				background: url(../images/logo.png) no-repeat;
+				width: 191px;
+				height: 41px;
+			}
+			a{
+				color: #313362;
+			}
+			.btn{
+				color: #fff;
+				background: #00d5c4;
+				border-color: #00d5c4;
+			}
+			&:after{
+				content: '';
+				height: 3px;
+				background: #ccc;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+			}
+		}
+		.js-progressbar{
+			display: block;
+		}
 	}
 }
 @media screen and (max-width:600px) {
@@ -767,6 +1111,57 @@
 	.hero-inner{
 		padding-bottom: 0;
 	}
+	.team-list{
+		li{
+			width: calc(100% / 2);
+		}
+	}
+	.contactus{
+		.holder{
+			display: block;
+		}
+		.data{
+			width: 100%;
+			text-align: center;
+		}
+		.map{
+			max-width: 300px;
+			width: 100%;
+			margin: 0 auto 50px;
+		}
+	}
+	.points3{
+		.holder{
+			padding-bottom: 0;
+		}
+	}
+	.hero-inner{
+		margin-top: 60px;
+		margin-bottom: 20px;
+	}
+	.guide-content{
+		.tip{
+			.content{
+				flex-direction: column;
+				.text{
+					padding-bottom: 30px;
+				}
+				.btn{
+					margin: 0;
+				}
+			}
+		}
+		.footer{
+			.btns{
+				flex-direction: column;
+				.btn{
+					width: 100%;
+					max-width: 350px;
+					margin: 0 auto 20px;
+				}
+			}
+		}
+	}
 }
 @media screen and (max-width:414px) {
 	.contact-form{
@@ -836,5 +1231,24 @@
 	}
 	.hero-inner{
 		padding: 0;
+	}
+	.howitworks-popup{
+		left: 10px !important;
+		ul{
+			margin-left: 0;
+			margin-right: 0;
+		}
+		li{
+			padding-left: 0;
+			padding-right: 0;
+			padding-bottom: 25px;
+			width: 100%;
+		}
+		p{
+			margin: 0;
+			br{
+				display: none;
+			}
+		}
 	}
 }
