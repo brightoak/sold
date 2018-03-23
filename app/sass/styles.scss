@@ -71,7 +71,7 @@ body{
 		background: none;
 		border-color: #313362;
 		box-shadow: none;
-		padding: 8px 30px;
+		padding: 8px 20px;
 		font-size: 13px;
 		letter-spacing: 1px;
 		&:hover{
@@ -884,6 +884,12 @@ body{
 				position: relative;
 			}
 		}
+		.cashoffer{
+			bottom: 170px;
+			img{
+				left: -270px;
+			}
+		}
 		.tags{
 			text-align: center;
 			line-height: 30px;
@@ -892,8 +898,24 @@ body{
 				background:rgba(20,22,55,.5);
 				padding: 0 15px;
 				border-radius: 15px;
+				margin-bottom: 10px;
+			}
+			a{
+				color: #fff;
 			}
 		}
+	}
+	.list{
+		margin-bottom: 30px;
+		li{
+			&:before{
+				content: '\2022';
+				margin-right: 10px;
+			}
+		}
+	}
+	h4{
+		margin-bottom:5px;
 	}
 }
 .guide-section{
@@ -1082,10 +1104,36 @@ body{
 	p{
 		margin-bottom: 30px;
 	}
+	.quote,
 	.img-holder{
 		margin: 0 -120px 50px;
 		img{
 			@extend .fullwidthimg;
+		}
+		.figcaption{
+			display: block;
+			text-align: center;
+			margin: 14px 0 -20px;
+		}
+	}
+	.quote{
+		font-size: 26px;
+		line-height: 36px;
+		color: #6d6e71;
+		font-style: italic;
+		font-weight: 300;
+		padding-left: 56px;
+		position: relative;
+		p{
+			margin: 0;
+		}
+		&:after{
+			content: '“';
+			position: absolute;
+			left: 0;
+			top: 0;
+			color: #313362;
+			font-size: 100px;
 		}
 	}
 	.tip{
@@ -1430,6 +1478,207 @@ body{
 		margin: 0 auto 45px;
 		align-items: center;
 		justify-content: center;
+	}
+}
+.blogpage{
+	background-position: 50% -210px;
+	.trendingarticles{
+		margin-bottom: 55px;
+	}
+	.hero-inner{
+		height: 310px;
+		padding-top: 20px;
+	}
+	&.js-sticky{
+		.hero-inner{
+			margin-top: 170px;
+		}
+	}
+	#container{
+		background: none;
+		padding-bottom: 0;
+	}
+}
+.filters{
+	text-align: center;
+	padding-bottom: 50px;
+	li{
+		display: inline-block;
+		margin: 0 15px 0 12px;
+		&:first-child{margin-left: 0;}
+		&:last-child{margin-right: 0;}
+	}
+	a{
+		color: #333;
+		&:hover{
+			color: #313362;
+		}
+	}
+	.active{
+		a{
+			color: #313362;
+		}
+		border-bottom: 5px solid #313362;
+	}
+}
+.pagination{
+	text-align: center;
+	line-height: 25px;
+	margin-bottom: 30px;
+	font-size: 16px;
+	li{
+		display: inline-block;
+		margin: 0 7px 0 5px;
+	}
+	a{
+		color: #333;
+		display: block;
+		min-width: 25px;
+		box-sizing: border-box;
+		padding: 0 3px;
+		@include animation;
+		&:hover{
+			background: #efefef;
+		}
+	}
+	.active{
+		font-weight: 500;
+		a{
+			color: #fff;
+			background: #313362;
+		}
+	}
+}
+.posts{
+	background:url(../images/bg-arrow-b.png) repeat-x 50% 100%;
+	overflow: hidden;
+	padding-bottom: 75px;
+	margin-bottom: 60px;
+}
+.page404{
+	background-position: 50% 180px;
+	background-color: #f5f7fa;
+	#container{
+		background: none;
+	}
+	#header{
+		padding-bottom: 60px;
+	}
+	.hero{
+		padding-bottom: 30px;
+		h1{
+			text-indent: -9999px;
+			background-image: url(../images/bg-404.png);
+			width: 607px;
+			height: 227px;
+			margin: 0 auto 30px;
+		}
+		p{
+			margin-bottom: 0;
+			a{
+				color: #00d5c4;
+				&:hover{
+					color: #313362;
+				}
+			}
+		}
+	}
+	&.js-sticky{
+		.hero{
+			margin-top: 170px;
+		}
+	}
+}
+.endcta-block{
+	background: #fff;
+	box-shadow: 0 3px 6px rgba(0,0,0,.2);
+	padding: 60px 80px;
+}
+.blogpost-page{
+	@extend .guide-overview;
+	background: #fff url(../images/bg-innerpage.png) no-repeat 50% 0;
+	.hero-holder,
+	.hero-i,
+	.hero{
+		background: none;
+	}
+	.hero{
+		h1{
+			color: #313362;
+			font-size: 64px;
+			max-width: 900px;
+			margin: 0 auto 20px;
+		}
+		.person{
+			bottom: -7px;
+		}
+		.cashoffer{
+			bottom: 170px;
+		}
+	}
+	#header{
+		a{
+			color: #313362;
+			&:hover{
+				color: $linkcolorhover;
+			}
+		}
+		.nav-holder{
+			.btn{
+				border-color: #313362;
+				&:hover{
+					color: #fff;
+				}
+			}
+		}
+		.logo{
+			background-image: url(../images/logo.png);
+			width: 191px;
+			height: 41px;
+		}
+	}
+	.guide-content{
+		.wrapper{
+			padding-bottom: 50px;
+		}
+	}
+	.trendingarticles .box:first-child,
+	.trendingarticles .box:nth-child(2){
+		width: 31%;
+		.img{
+			height: 265px;
+			padding-top: 20px;
+			img{
+				height: auto;
+			}
+		}
+	}
+	#container{
+		background: none;
+	}
+	&.js-sticky #header .btn{
+		border-color: #00d5c4;
+	}
+}
+.post-author{
+	text-align: center;
+	font-size: 14px;
+	margin: -70px 0 65px;
+	.photo{
+		display: block;
+		img{
+			display: inline-block;
+			border-radius: 50%;
+		}
+	}
+	.name{
+		display: block;
+		font-weight: normal;
+	}
+	.date{
+		display: block;
+		color: #333;
+		font-style: normal;
 	}
 }
 @import "responsive";
