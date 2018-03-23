@@ -4963,6 +4963,8 @@ body.home{
 	background:#fff;
 	box-shadow:0 3px 6px rgba(0, 0, 0, .2);
 	padding:60px 80px;
+	box-sizing:border-box;
+	max-width:100%;
 }
 
 .blogpost-page{
@@ -5975,6 +5977,15 @@ body.home{
 		margin-right:0;
 		margin-top:50px;
 	}
+	.page404{
+		background-position:50% 200px;
+		background-color:#fff;
+	}
+	.page404 .hero h1{
+		width:303px;
+		height:114px;
+		background-size:cover;
+	}
 }
 
 @media screen and (min-width: 601px){
@@ -6148,6 +6159,9 @@ body.home{
 	}
 	.media-partners li{
 		width:33.3%;
+	}
+	.endcta-block{
+		padding:20px;
 	}
 }
 

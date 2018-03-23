@@ -797,6 +797,17 @@
 			margin-top: 50px;
 		}
 	}
+	.page404{
+		background-position: 50% 200px;
+		background-color: #fff;
+		.hero{
+			h1{
+				width: 303px;
+				height: 114px;
+				background-size: cover;
+			}
+		}
+	}
 }
 @media screen and (min-width:601px) {
 	.js-sticky{
@@ -979,6 +990,9 @@
 		li{
 			width: 33.3%;
 		}
+	}
+	.endcta-block{
+		padding: 20px;
 	}
 }
 @media screen and (max-width:500px) {
