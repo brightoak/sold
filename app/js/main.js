@@ -8,8 +8,9 @@
     4. Show navigation dropdown on mobile devices by click
     5. Contact Form Falidation
     6. ScrollTo
-    7. Sticky Nav
+    7. Sticky Header
     8. How it works popup
+    9. Custom select
 
 ****/
 
@@ -121,22 +122,15 @@ new SmoothScroll('a.scrollto[href*="#"]');
 // 7. Sticky Header
 let header = document.getElementById('header');
 if (header){
-    let headerH = header.offsetHeight + 50;
+    let headroom  = new Headroom(header);
+    headroom.init();
     let body = document.querySelector('body');
     let bodyHeight = body.clientHeight;
     let windowHeight = window.outerHeight;
-    let span = document.createElement('span');
-    span.classList.add('js-progressbar');
-    header.appendChild(span);
+    let progressbar = header.querySelector('.js-progressbar');
     document.onscroll = (e) =>{
         let y = window.scrollY;
-        if (y > headerH){
-            body.classList.add('js-sticky');
-            span.style.width = (y+windowHeight)/bodyHeight * 100 + '%';
-        }
-        else{
-            body.classList.remove('js-sticky');
-        }
+        progressbar.style.width = (y+windowHeight)/bodyHeight * 100 + '%';
     }
 }
 
@@ -182,3 +176,6 @@ if (howitworksPopup){
         }
     }
 }
+
+// 9. Custom Select
+customSelect('.custom-select');

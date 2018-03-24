@@ -1,6 +1,7 @@
 @import "variables";
 @import "fonts";
 @import "reset";
+@import "custom-select";
 @import "tiny-slider";
 
 html{height:100%;}
@@ -17,6 +18,7 @@ body{
 	background:url(../images/bg-page-b.png) no-repeat 50% 100%;
 	overflow: hidden;
 	padding-bottom: 100px;
+	// padding-top: 191px;
 }
 .wrapper{
 	padding: 0 20px;
@@ -49,7 +51,11 @@ body{
 #header{
 	border-top: 5px solid #795cb8;
 	padding-top: 44px;
-	padding-bottom: 82px;
+	z-index: 110;
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 0;
 	&:after{
 		content: '';
 		display: block;
@@ -59,6 +65,47 @@ body{
 		max-width: 1920px;
 		padding: 0 50px;
 	}
+	.logo{
+		background: url(../images/logo.png) no-repeat;
+		width: 191px;
+		height: 41px;
+	}
+	&.headroom {
+		will-change: transform;
+		transition: transform 200ms linear;
+		&--pinned{
+			transform: translateY(0%);
+		}
+		&--not-top{
+			background: #fff;
+			padding:16px 0 21px;
+			box-shadow: 0 0 9px rgba(0,0,0,.1);
+			width: 100%;
+			z-index: 101;
+			border-top: none;
+			a{
+				color: #313362;
+			}
+			.btn{
+				color: #fff;
+				background: #00d5c4;
+				border-color: #00d5c4;
+				box-shadow: 0 3px 6px rgba(1,1,1,.2);
+			}
+			&:after{
+				content: '';
+				height: 3px;
+				background: #ccc;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+			}
+		}
+		&--unpinned{
+			transform: translateY(-100%);
+		}
+	}
 }
 .nav-holder{
 	float: right;
@@ -66,6 +113,12 @@ body{
 	font-weight: 500;
 	font-size: 13px;
 	text-transform: uppercase;
+	.guide-overview &{
+		padding-top: 20px;
+	}
+	.blogpost-page &{
+		padding-top: 5px;
+	}
 	.btn{
 		color: #313362;
 		background: none;
@@ -191,7 +244,7 @@ body{
 .hero{
 	text-align: center;
 	color: #313362;
-	padding: 0 0 65px;
+	padding: 191px 0 65px;
 	h1{
 		margin-bottom: 10px;
 	}
@@ -208,6 +261,7 @@ body{
 	height: 516px;
 	box-sizing: border-box;
 	padding: 70px 0 0;
+	margin-top: 175px;
 	margin-bottom: 70px;
 	position: relative;
 	&:after{
@@ -820,8 +874,7 @@ body{
 }
 .guide-overview{
 	background: #fff;
-	#header{
-		position: absolute;
+	#header.headroom--top{
 		border: none;
 		left: 0;
 		width: 100%;
@@ -1349,6 +1402,9 @@ body{
 	width: 0;
 	z-index: 1;
 	display: none;
+	.headroom--not-top &{
+		display: block;
+	}
 }
 #fader{
 	position: fixed;
@@ -1494,11 +1550,6 @@ body{
 		height: 310px;
 		padding-top: 20px;
 	}
-	&.js-sticky{
-		.hero-inner{
-			margin-top: 170px;
-		}
-	}
 	#container{
 		background: none;
 		padding-bottom: 0;
@@ -1561,13 +1612,9 @@ body{
 	margin-bottom: 60px;
 }
 .page404{
-	background-position: 50% 180px;
-	background-color: #f5f7fa;
+	background: #f5f7fa url(../images/bg-quizpage.png) no-repeat 50% 0;
 	#container{
 		background: none;
-	}
-	#header{
-		padding-bottom: 60px;
 	}
 	.hero{
 		padding-bottom: 30px;
@@ -1586,11 +1633,6 @@ body{
 					color: #313362;
 				}
 			}
-		}
-	}
-	&.js-sticky{
-		.hero{
-			margin-top: 170px;
 		}
 	}
 }
@@ -1623,7 +1665,7 @@ body{
 			bottom: 170px;
 		}
 	}
-	#header{
+	#header.headroom--top{
 		a{
 			color: #313362;
 			&:hover{
@@ -1663,9 +1705,6 @@ body{
 	#container{
 		background: none;
 	}
-	&.js-sticky #header .btn{
-		border-color: #00d5c4;
-	}
 }
 .post-author{
 	text-align: center;
@@ -1687,5 +1726,21 @@ body{
 		color: #333;
 		font-style: normal;
 	}
+}
+.quiz-holder{
+	height: 640px;
+	background: #fff;
+	box-shadow:0 0 7px rgba(0,0,0,.1);
+	border-radius: 10px;
+}
+.quiz-page{
+	background: #f5f7fa url(../images/bg-quizpage.png) no-repeat 50% 0;
+	#container{
+		background: none;
+	}
+}
+.quiz-block{
+	max-width: 1300px;
+	margin: 0 auto;
 }
 @import "responsive";

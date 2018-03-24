@@ -509,7 +509,10 @@
 		background: none;
 		padding-bottom: 30px;
 	}
-	body{
+	.blogpost-page,
+	body,
+	body.page404,
+	body.home{
 		background: #fff url(../images/homepage-bg-mobile.png) no-repeat 50% 200px;
 	}
 	#header{
@@ -812,53 +815,6 @@
 		background-position: 50% 200px;
 	}
 }
-@media screen and (min-width:601px) {
-	.js-sticky{
-		&.innerpage,
-		&.home{
-			#container{
-				padding-top: 176px;
-			}
-		}
-		#header{
-			position: fixed;
-			background: #fff;
-			padding:16px 0 21px;
-			box-shadow: 0 0 9px rgba(0,0,0,.1);
-			width: 100%;
-			left: 0;
-			top: 0;
-			z-index: 101;
-			border-top: none;
-			.logo{
-				background: url(../images/logo.png) no-repeat;
-				width: 191px;
-				height: 41px;
-			}
-			a{
-				color: #313362;
-			}
-			.btn{
-				color: #fff;
-				background: #00d5c4;
-				border-color: #00d5c4;
-				box-shadow: 0 3px 6px rgba(1,1,1,.2);
-			}
-			&:after{
-				content: '';
-				height: 3px;
-				background: #ccc;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				width: 100%;
-			}
-		}
-		.js-progressbar{
-			display: block;
-		}
-	}
-}
 @media screen and (max-width:600px) {
 	#header{
 		padding-bottom: 45px;
@@ -1004,15 +960,13 @@
 			height: auto;
 			padding-top: 50px;
 		}
-		&.js-sticky .hero-inner{
-			margin-top: 0;
-		}
 	}
 	.filters{
 		padding-bottom:30px;
 	}
 }
 @media screen and (max-width:500px) {
+	body.home,
 	body{
 		background-position: 50% 88px;
 	}
@@ -1182,7 +1136,6 @@
 		}
 	}
 	.hero-inner{
-		margin-top: 60px;
 		margin-bottom: 20px;
 	}
 	.guide-content{
@@ -1220,8 +1173,14 @@
 			}
 		}
 	}
+	.endcta .btn{
+		min-width: 0;
+	}
 }
 @media screen and (max-width:414px) {
+	.guide-overview .hero, .blogpost-page .hero{
+		margin-bottom: 50px;
+	}
 	.contact-form{
 		padding: 20px 20px 40px;
 	}
@@ -1306,6 +1265,50 @@
 			margin: 0;
 			br{
 				display: none;
+			}
+		}
+	}
+	.guide-overview{
+		.nav-holder{
+			padding-top: 5px;
+		}
+		#header.headroom--top .logo{
+			width: 152px;
+			height: 54px;
+			background-size: cover;
+		}
+	}
+	.blogpost-page{
+		#header.headroom--top .logo{
+			width: 191px;
+			height: 41px;
+			background-size: cover;
+		}
+		.hero{
+			padding-top: 191px;
+			.hero-holder{
+				padding-top: 0;
+			}
+			.text{
+				position: static;
+				transform: none;
+			}
+			.wrapper{
+				height: auto;
+			}
+		}
+	}
+	.guide-content{
+		.post-author{
+			margin-top: 0;
+		}
+		.tip{
+			.btns{
+				.btn{
+					display: block;
+					margin-right: 0;
+					margin-left: 0;
+				}
 			}
 		}
 	}
