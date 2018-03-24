@@ -808,6 +808,9 @@
 			}
 		}
 	}
+	.blogpage{
+		background-position: 50% 200px;
+	}
 }
 @media screen and (min-width:601px) {
 	.js-sticky{
@@ -993,6 +996,20 @@
 	}
 	.endcta-block{
 		padding: 20px;
+	}
+	.blogpage{
+		background-position: 50% 100px;
+		.hero-inner{
+			margin-bottom: 30px;
+			height: auto;
+			padding-top: 50px;
+		}
+		&.js-sticky .hero-inner{
+			margin-top: 0;
+		}
+	}
+	.filters{
+		padding-bottom:30px;
 	}
 }
 @media screen and (max-width:500px) {

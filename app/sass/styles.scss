@@ -895,13 +895,18 @@ body{
 			line-height: 30px;
 			li{
 				display: inline-block;
-				background:rgba(20,22,55,.5);
-				padding: 0 15px;
-				border-radius: 15px;
 				margin-bottom: 10px;
 			}
 			a{
 				color: #fff;
+				display: block;
+				background:rgba(20,22,55,.5);
+				padding: 0 15px;
+				border-radius: 15px;
+				@include animation;
+				&:hover{
+					background:rgb(20,22,55);
+				}
 			}
 		}
 	}
@@ -1504,7 +1509,7 @@ body{
 	padding-bottom: 50px;
 	li{
 		display: inline-block;
-		margin: 0 15px 0 12px;
+		margin: 0 15px 5px 12px;
 		&:first-child{margin-left: 0;}
 		&:last-child{margin-right: 0;}
 	}
