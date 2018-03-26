@@ -211,6 +211,25 @@ if (quiz){
                 goBack(e);
             };
         }
+
+        let boxHolder = el.querySelector('.boxes-holder');
+        let boxes = el.querySelectorAll('.box');
+        if (boxes.length > 0){
+            boxes.forEach((box, index) => {
+                box.onclick = () => {
+                    let boxActive = boxHolder.querySelector('.js-active');
+                    if (boxActive){
+                        boxActive.classList.remove('js-active');
+                    }
+                    box.classList.add('js-active');
+
+                    let btnDisabled = el.querySelector('.quiz-btns .disabled');
+                    if (btnDisabled){
+                        btnDisabled.classList.remove('disabled');
+                    }
+                };
+            });
+        }
     });
 
     window.onresize = () => {
@@ -243,4 +262,5 @@ if (quiz){
         quizContainer.style.marginLeft = -width * dataAttr + 'px';
         progressBar.setAttribute('data-attr', dataAttr);
     }
+
 }

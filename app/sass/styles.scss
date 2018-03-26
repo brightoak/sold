@@ -149,7 +149,7 @@ body{
 	a{
 		color: $darklinkcolor;
 		&:hover{
-			color: $linkcolorhover;
+			color: $linkcolorhover !important;
 		}
 	}
 	li{
@@ -1957,7 +1957,7 @@ body{
 		padding: 38px 10px 30px;
 		box-sizing: border-box;
 		cursor: pointer;
-		&.active,
+		&.js-active,
 		&:hover{
 			border-color: #00d5c4;
 			background-color: #eefffe;
