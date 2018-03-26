@@ -1772,9 +1772,9 @@ body{
 	}
 }
 .quiz-inner{
-	width: 99999px;
 	overflow: hidden;
 	@include animation;
+	padding-bottom: 10px;
 }
 .quiz-step{
 	margin: 0;
@@ -1782,7 +1782,9 @@ body{
 	padding-left: 50px;
 	padding-right: 50px;
 	box-sizing: border-box;
-	float: left;
+	position: absolute;
+	left: 0;
+	top: 0;
 	@include animation;
 	&.js-active{
 		position: relative;
@@ -1792,6 +1794,7 @@ body{
 	&.js-completed{
 		z-index: auto;
 		opacity: 0;
+		left: -200px;
 	}
 }
 .address-form{
@@ -2074,7 +2077,7 @@ body{
 			background-position: 0 -800px;
 		}
 		&.ico-norush{
-			background-position: 0 -1000px;
+			background-position: 0 -700px;
 		}
 		&.ico-introvert{
 			background-position: -200px -500px;
@@ -2092,7 +2095,7 @@ body{
 		&.ico-plan1{
 			background:url(../images/icos-quiz8.png) no-repeat;
 			height: 140px;
-			width: 229px;
+			width: 234px;
 		}
 		&.ico-plan2{
 			background-position: 0 -140px;
@@ -2104,7 +2107,7 @@ body{
 			background-position: 0 -420px;
 		}
 		&.ico-plan5{
-			background-position: 0 -600px;
+			background-position: 0 -560px;
 		}
 	}
 }
