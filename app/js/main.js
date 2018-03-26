@@ -11,6 +11,7 @@
     7. Sticky Header
     8. How it works popup
     9. Custom select
+    10. Quiz
 
 ****/
 
@@ -179,3 +180,67 @@ if (howitworksPopup){
 
 // 9. Custom Select
 customSelect('.custom-select');
+
+// 10. Quiz
+let quiz = document.querySelector('.quiz-holder');
+if (quiz){
+    let width = quiz.clientWidth,
+        steps = quiz.querySelectorAll('.quiz-step'),
+        quizContainer = quiz.querySelector('.quiz-inner'),
+        progressBar = document.querySelector('.quiz-progressbar'),
+        activeStep = quiz.querySelector('.quiz-step.js-active'),
+        dataAttr = activeStep.getAttribute('data-attr');
+
+    let nextEl,
+        prevEl,
+        btn,
+        back;
+    
+
+    steps.forEach((el) => {
+        el.style.width = width + 'px';
+        btn = el.querySelector('.btn');
+        if (btn){
+            btn.onclick = (e) => {
+                goNext(e);
+            };
+        }
+        back = el.querySelector('.back');
+        if (back){
+            back.onclick = (e) => {
+                goBack(e);
+            };
+        }
+    });
+
+    window.onresize = () => {
+        width = quiz.clientWidth;
+        steps.forEach((el) => {
+            el.style.width = width + 'px';
+        });
+        quizContainer.style.marginLeft = -width * dataAttr + 'px';
+    };
+
+    function goNext (e){
+        e.preventDefault();
+        activeStep = quiz.querySelector('.quiz-step.js-active');
+        activeStep.classList.remove('js-active');
+        activeStep.classList.add('js-completed');
+        nextEl = activeStep.nextElementSibling;
+        nextEl.classList.add('js-active');
+        dataAttr = activeStep.getAttribute('data-attr');
+        quizContainer.style.marginLeft = -width * dataAttr + 'px';
+        progressBar.setAttribute('data-attr', dataAttr*1+1);
+    }
+    function goBack (e){
+        e.preventDefault();
+        activeStep = quiz.querySelector('.quiz-step.js-active');
+        activeStep.classList.remove('js-active');
+        prevEl = activeStep.previousElementSibling;
+        prevEl.classList.remove('js-completed');
+        prevEl.classList.add('js-active');
+        dataAttr = prevEl.getAttribute('data-attr')*1-1;
+        quizContainer.style.marginLeft = -width * dataAttr + 'px';
+        progressBar.setAttribute('data-attr', dataAttr);
+    }
+}

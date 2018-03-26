@@ -1,0 +1,48 @@
+.js-animated{
+	position: relative;
+	opacity: 0;
+}
+.js-animation{
+	animation-duration: .8s;
+	animation-timing-function: ease-in-out;
+	animation-delay:0;
+	animation-fill-mode:forwards;
+}
+@keyframes fadeIn{
+  from {
+    opacity:0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+@keyframes fadeInLeft{
+  from {
+    left: -150px;
+    opacity:0;
+  }
+  to{
+    left: 0;
+    opacity: 1;
+  }
+}
+@keyframes fadeInRight{
+  from {
+    right: -150px;
+    opacity:0;
+  }
+  to{
+    right: 0;
+    opacity: 1;
+  }
+}
+@keyframes fadeInDown{
+  from {
+    bottom: -50px;
+    opacity:0;
+  }
+  to{
+    bottom: 0;
+    opacity: 1;
+  }
+}

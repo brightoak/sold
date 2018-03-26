@@ -1,0 +1,292 @@
+<!-- partial:partials/_head.html -->
+<!-- partial -->
+
+<body class="quiz-page">
+  <div id="container">
+    <!-- partial:partials/_header.html -->
+    <!-- partial -->
+    <div class="wrapper">
+      <div class="quiz-holder">
+        <div class="contact-person">
+          <span class="photo"><img src="images/img34.jpg" width="142" height="142"  alt="Megan Arnold"></span>
+          <strong class="name">Megan Arnold</strong>
+          <em>Sold.com Home Specialist</em>
+        </div>
+        <div class="quiz-content">
+          <div class="quiz-inner">
+            <div class="quiz-step js-active" data-attr="1">
+              <h2>What&rsquor;s your address?</h2>
+              <form action="" class="address-form">
+                <div class="field">
+                  <label for="address">Address</label>
+                  <input type="text" class="txt" id="address">
+                </div>
+                <div class="fields3">
+                  <div class="field">
+                    <label for="city">City</label>
+                    <input type="text" class="txt" id="city">
+                  </div>
+                  <div class="field">
+                    <label for="state">State</label>
+                    <select id="state" class="custom-select">
+                      <option value="pa">PA</option>
+                      <option value="pa">PA</option>
+                      <option value="pa">PA</option>
+                      <option value="pa">PA</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="zip">Zip</label>
+                    <input type="text" class="txt" id="zip" maxlength="5">
+                  </div>
+                </div>
+              </form>
+              <div class="quiz-btns">
+                <a href="" class="btn">Next</a>
+              </div>
+            </div>
+            <div class="quiz-step" data-attr="2">
+              <h2>Why are you selling the home?</h2>
+              <div class="selling-reasons">
+                <h3>Select the closest reason</h3>
+                <div class="boxes-holder">
+                  <div class="box">
+                    <span class="ico-relocating"></span>
+                    <h4>Relocating</h4>
+                    <h5>Need to move out of the area</h5>
+                  </div>
+                  <div class="box">
+                    <span class="ico-upsizing"></span>
+                    <h4>Upsizing</h4>
+                    <h5>Need some elbow room</h5>
+                  </div>
+                  <div class="box">
+                    <span class="ico-downsizing"></span>
+                    <h4>Downsizing</h4>
+                    <h5>Less space would be nice</h5>
+                  </div>
+                  <div class="box">
+                    <span class="ico-finances"></span>
+                    <h4>Finances</h4>
+                    <h5>Selling primarily for the $$$</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="quiz-btns">
+                <a href="" class="back">Back</a>
+                <span class="btn-holder disabled"><a href="" class="btn">Next</a></span>
+              </div>
+            </div>
+            <div class="quiz-step" data-attr="3">
+              <h2>Have you sold a home in the past?</h2>
+              <div id="howsoon">
+                <div class="slider-content">
+                  <div class="holder js-active" data-attr="1">
+                    <span class="ico-asap"></span>
+                    <h3>Immediately</h3>
+                    <em>within 1 month</em>
+                  </div>
+                  <div class="holder" data-attr="2">
+                    <span class="ico-soon"></span>
+                    <h3>Soon</h3>
+                    <em>within 1 month</em>
+                  </div>
+                  <div class="holder" data-attr="3">
+                    <span class="ico-nearfuture"></span>
+                    <h3>Near Future</h3>
+                    <em>within 1 month</em>
+                  </div>
+                  <div class="holder" data-attr="4">
+                    <span class="ico-norush"></span>
+                    <h3>No Rush</h3>
+                    <em>within 1 month</em>
+                  </div>
+                </div>
+                <div class="Slider js-ranger">
+                  <input data-min="1"  data-max="4" data-step="1" value="1"  type="hidden" name="amount" autocomplete="off" class="js-ranger-input">
+                  <div class="Slider-track js-ranger-track">
+                    <div class="Slider-distance js-ranger-distance">
+                      <div class="Slider-handle"></div>
+                    </div>
+                  </div>
+                  <output class="Slider-indicator js-ranger-indicator">
+                    <small class="Slider-value js-ranger-value"></small>
+                  </output>
+                </div>
+              </div>
+              <div class="quiz-btns">
+                <a href="" class="back">Back</a>
+                <span class="btn-holder"><a href="" class="btn">Next</a></span>
+              </div>
+            </div>
+            <div class="quiz-step" data-attr="4">
+              <h2>Have you sold a home in the past?</h2>
+              <div class="selling-reasons">
+                <div class="boxes-holder">
+                  <div class="box">
+                    <span class="ico-yes"></span>
+                    <h4>Yes</h4>
+                    <h5>I have sold a home</h5>
+                  </div>
+                  <div class="box">
+                    <span class="ico-no"></span>
+                    <h4>No</h4>
+                    <h5>I haven&rsquor;t sold a home</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="quiz-btns">
+                <a href="" class="back">Back</a>
+                <span class="btn-holder disabled"><a href="" class="btn">Next</a></span>
+              </div>
+            </div>
+            <div class="quiz-step" data-attr="5">
+              <h2>What is the condition of the home?</h2>
+              <div class="selling-reasons">
+                <h3>Select the closest reason</h3>
+                <div class="boxes-holder">
+                  <div class="box">
+                    <span class="ico-excellent"></span>
+                    <h4>Excellent</h4>
+                  </div>
+                  <div class="box">
+                    <span class="ico-good"></span>
+                    <h4>Good</h4>
+                  </div>
+                  <div class="box">
+                    <span class="ico-average"></span>
+                    <h4>Average</h4>
+                  </div>
+                  <div class="box">
+                    <span class="ico-poor"></span>
+                    <h4>Poor</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="quiz-btns">
+                <a href="" class="back">Back</a>
+                <span class="btn-holder disabled"><a href="" class="btn">Next</a></span>
+              </div>
+            </div>
+            <div class="quiz-step" data-attr="6">
+              <h2>Are you an extrovert or an introvert? <span class="question"><span>Some selling options require a lot of interaction with other people. We want to recommend one that is right for you.</span></span></h2>
+              <div id="person-type">
+                <div class="slider-content">
+                  <div class="holder js-active" data-attr="1">
+                    <span class="ico-introvert"></span>
+                    <h3>Introvert</h3>
+                    <em>Not a huge fan of talking to people I don&rsquor;t know</em>
+                  </div>
+                  <div class="holder" data-attr="2">
+                    <span class="ico-middle"></span>
+                    <h3>Middle</h3>
+                    <em>Not a huge fan of talking to people I don&rsquor;t know</em>
+                  </div>
+                  <div class="holder" data-attr="3">
+                    <span class="ico-extrovert"></span>
+                    <h3>Extrovert</h3>
+                    <em>Not a huge fan of talking to people I don&rsquor;t know</em>
+                  </div>
+                </div>
+                <div class="Slider js-ranger">
+                  <input data-min="1"  data-max="3" data-step="1" value="1"  type="hidden" name="amount" autocomplete="off" class="js-ranger-input">
+                  <div class="Slider-track js-ranger-track">
+                    <div class="Slider-distance js-ranger-distance">
+                      <div class="Slider-handle"></div>
+                    </div>
+                  </div>
+                  <output class="Slider-indicator js-ranger-indicator">
+                    <small class="Slider-value js-ranger-value"></small>
+                  </output>
+                </div>
+              </div>
+              <div class="quiz-btns">
+                <a href="" class="back">Back</a>
+                <span class="btn-holder"><a href="" class="btn">Next</a></span>
+              </div>
+            </div>
+            <div class="quiz-step" data-attr="7">
+              <h2>How detailed are your vacation plans? <span class="question"><span>Some selling options require detailed planning. We want to recommend one that suits you.</span></span></h2>
+              <div class="selling-reasons">
+                <div class="boxes-holder">
+                  <div class="box">
+                    <span class="ico-planned"></span>
+                    <h4>Every minute is planned</h4>
+                  </div>
+                  <div class="box">
+                    <span class="ico-planning"></span>
+                    <h4>I do a little planning</h4>
+                  </div>
+                  <div class="box">
+                    <span class="ico-figure"></span>
+                    <h4>I figure it out when I get there</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="quiz-btns">
+                <a href="" class="back">Back</a>
+                <span class="btn-holder disabled"><a href="" class="btn">Next</a></span>
+              </div>
+            </div>
+            <div class="quiz-step" data-attr="8">
+              <h2>How detailed are your vacation plans?</h2>
+              <div id="plans-content">
+                <div class="slider-content">
+                  <div class="holder js-active" data-attr="1">
+                    <span class="ico-plan1"></span>
+                    <em>Mostly care about price; am flexible on timing</em>
+                  </div>
+                  <div class="holder" data-attr="2">
+                    <span class="ico-plan2"></span>
+                    <em>Mostly care about price; am flexible on timing</em>
+                  </div>
+                  <div class="holder" data-attr="3">
+                    <span class="ico-plan3"></span>
+                    <em>Mostly care about price; am flexible on timing</em>
+                  </div>
+                  <div class="holder" data-attr="4">
+                    <span class="ico-plan4"></span>
+                    <em>Mostly care about price; am flexible on timing</em>
+                  </div>
+                  <div class="holder" data-attr="5">
+                    <span class="ico-plan5"></span>
+                    <em>Mostly care about price; am flexible on timing</em>
+                  </div>
+                </div>
+                <div class="Slider js-ranger">
+                  <input data-min="1"  data-max="5" data-step="1" value="1"  type="hidden" name="amount" autocomplete="off" class="js-ranger-input">
+                  <div class="Slider-track js-ranger-track">
+                    <div class="Slider-distance js-ranger-distance">
+                      <div class="Slider-handle"></div>
+                    </div>
+                  </div>
+                  <output class="Slider-indicator js-ranger-indicator">
+                    <small class="Slider-value js-ranger-value"></small>
+                  </output>
+                </div>
+              </div>
+              <div class="quiz-btns">
+                <a href="" class="back">Back</a>
+                <span class="btn-holder"><a href="" class="btn">Next</a></span>
+              </div>
+            </div>
+            <div class="quiz-step" data-attr="9">
+              <h2>Calculating</h2>
+              <div class="content">
+                <span class="img-holder"><img src="images/ico-quiz9.png" width="204" height="189"></span>
+                <h3>Gathering property info...</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="quiz-progressbar" data-attr="1">
+        <em>Progress - <span class="number"></span> of 8</em>
+        <span class="bar"><span></span></span>
+      </div>
+    </div>
+  </div>
+<!-- partial:partials/_howitworks-popup.html -->
+<!-- partial -->
+<!-- partial:partials/_footer.html -->
+<!-- partial -->

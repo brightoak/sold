@@ -456,46 +456,7 @@
 			}
 		}
 	}
-	@keyframes fadeIn{
-		from {
-			opacity:0;
-		}
-		to{
-			opacity: 1;
-		}
-	}
-	@keyframes fadeInLeft{
-		from {
-			left: -150px;
-			opacity:0;
-		}
-		to{
-			left: 0;
-			opacity: 1;
-		}
-	}
-	@keyframes fadeInRight{
-		from {
-			right: -150px;
-			opacity:0;
-		}
-		to{
-			right: 0;
-			opacity: 1;
-		}
-	}
-	@keyframes fadeInDown{
-		from {
-			bottom: -50px;
-			opacity:0;
-		}
-		to{
-			bottom: 0;
-			opacity: 1;
-		}
-	}
 }
-
 @media screen and (max-width:768px) {
 	.about-section{
 		.text{
