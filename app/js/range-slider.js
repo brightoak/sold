@@ -178,7 +178,6 @@
 
       let onMouseDown = e => {
         eventHandler(ranger, pauseEvent, e, true, update)
-
         if (!isNaN(ranger.steps)) {
           ranger.currentPosition = handlePositionSteps(ranger.offset, ranger.dimensions.width, ranger.min, ranger.max, ranger.steps)
         } else {

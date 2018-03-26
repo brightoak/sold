@@ -1738,6 +1738,7 @@ body{
 	h2{
 		font-size: 32px;
 		margin-bottom: 20px;
+		padding-top: 5px;
 	}
 }
 .quiz-page{
@@ -1867,14 +1868,14 @@ body{
 	}
 	.disabled{
 		position: relative;
-		// &:after{
-		// 	content: '';
-		// 	position: absolute;
-		// 	left: 0;
-		// 	top: 0;
-		// 	right: 0;
-		// 	bottom: 0;
-		// }
+		&:after{
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+		}
 		.btn{
 			background: #dcdee1;
 			border-color:#dcdee1;

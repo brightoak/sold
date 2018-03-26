@@ -12,6 +12,7 @@
     8. How it works popup
     9. Custom select
     10. Quiz
+    11. Slider Howsoon
 
 ****/
 
@@ -214,6 +215,7 @@ if (quiz){
 
         let boxHolder = el.querySelector('.boxes-holder');
         let boxes = el.querySelectorAll('.box');
+        
         if (boxes.length > 0){
             boxes.forEach((box, index) => {
                 box.onclick = () => {
@@ -260,7 +262,39 @@ if (quiz){
         prevEl.classList.add('js-active');
         dataAttr = prevEl.getAttribute('data-attr')*1-1;
         quizContainer.style.marginLeft = -width * dataAttr + 'px';
-        progressBar.setAttribute('data-attr', dataAttr);
+        progressBar.setAttribute('data-attr', dataAttr+1);
     }
+}
 
+// 11. Slider Howsoon
+let sliderHowsoon = document.getElementById('slider-howsoon');
+if (sliderHowsoon){
+    // noUiSlider.create(sliderHowsoon, {
+    //     range: {
+    //         'min': 5,
+    //         '35%': 35,
+    //         '65%': 65,
+    //         'max': 95
+    //     },
+    //     start: [5],
+    //     snap: true,
+    //     pips: { 
+    //         mode: 'positions',
+	// 	    values: [5,35,65,95],
+    //         density: 25
+    //     }
+    // });
+
+    // let pips = pipsSlider.querySelectorAll('.noUi-value');
+
+    // function clickOnPip ( ) {
+    //     var value = Number(this.getAttribute('data-value'));
+    //     pipsSlider.noUiSlider.set(value);
+    // }
+
+    // for ( var i = 0; i < pips.length; i++ ) {
+    //     // For this example. Do this in CSS!
+    //     pips[i].style.cursor = 'pointer';
+    //     pips[i].addEventListener('click', clickOnPip);
+    // }
 }
