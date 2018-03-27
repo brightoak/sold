@@ -572,8 +572,8 @@ if (quiz){
     let questions = quiz.querySelectorAll('.question');
     if (questions.length > 0){
       questions.forEach((question) => {
-        question.onclick = () => {
-          question.classList.toggle('js-visible');
+        question.onclick = (e) => {
+          question.classList.toggle('js-visible')
         }
       });
     }

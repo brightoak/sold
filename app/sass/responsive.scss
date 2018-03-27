@@ -1481,7 +1481,13 @@
 				right: 6px;
 			}
 		}
-		&:hover,
+		&:hover{
+			background-position: 0 0;
+			span{
+				opacity: 0;
+				z-index: -1;
+			}
+		}
 		&.js-visible{
 			background-position: 0 -42px;
 			span{
