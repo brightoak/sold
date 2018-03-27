@@ -275,130 +275,133 @@ if (quiz){
       progressBar.setAttribute('data-attr', dataAttr+1);
   }
 
-  function getNumber (node, value) {
-    return parseInt(node.getAttribute(value), 10)
+  function getNumber(node, value) {
+    return parseInt(node.getAttribute(value), 10);
   }
 
   // -- Prevent text selection while dragging
-  function pauseEvent (e) {
+  function pauseEvent(e) {
     if (e.stopPropagation) {
-      e.stopPropagation()
+      e.stopPropagation();
     }
 
     if (e.preventDefault) {
-      e.preventDefault()
+      e.preventDefault();
     }
 
-    e.cancelBubble = true
-    e.returnValue = false
-    return false
+    e.cancelBubble = true;
+    e.returnValue = false;
+    return false;
   }
 
-  let now = function now () {
-    return new Date().getTime()
-  }
+  let now = function now() {
+    return new Date().getTime();
+  };
 
-  function debounce (func, wait, immediate) {
-    let timeout, args, context, timestamp, result
-    if (null == wait) wait = 100
+  function debounce(func, wait, immediate) {
+    let timeout = undefined,
+        args = undefined,
+        context = undefined,
+        timestamp = undefined,
+        result = undefined;
+    if (null == wait) wait = 100;
 
     function later() {
-      var last = now() - timestamp
+      let last = now() - timestamp;
 
       if (last < wait && last > 0) {
-        timeout = setTimeout(later, wait - last)
+        timeout = setTimeout(later, wait - last);
       } else {
-        timeout = null
+        timeout = null;
         if (!immediate) {
-          result = func.apply(context, args)
-          if (!timeout) context = args = null
+          result = func.apply(context, args);
+          if (!timeout) context = args = null;
         }
       }
     };
 
-    return function debounced () {
-      context = this
-      args = arguments
-      timestamp = now()
-      var callNow = immediate && !timeout
-      if (!timeout) timeout = setTimeout(later, wait)
+    return function debounced() {
+      context = this;
+      args = arguments;
+      timestamp = now();
+      let callNow = immediate && !timeout;
+      if (!timeout) timeout = setTimeout(later, wait);
       if (callNow) {
-        result = func.apply(context, args)
-        context = args = null
+        result = func.apply(context, args);
+        context = args = null;
       }
 
-      return result
-    }
+      return result;
+    };
   }
 
-  function setInitialPosition (min, max, initValue) {
-    let initial = isNaN(initValue) ? 0 : initValue
-    let range = (max - min)
-    let percent = Math.round(((initial - min) * 100) / range)
-    return percent
+  function setInitialPosition(min, max, initValue) {
+    let initial = isNaN(initValue) ? 0 : initValue;
+    let range = max - min;
+    let percent = Math.round((initial - min) * 100 / range);
+    return percent;
   }
 
-  function handlePosition (offset, width) {
-    let min = 0
-    let max = 100
-    let ratio = Math.min(Math.max(offset / width, min), 1)
-    let range = (max - min)
-    let percent = Math.round((ratio * range) + min)
-    return percent
+  function handlePosition(offset, width) {
+    let min = 0;
+    let max = 100;
+    let ratio = Math.min(Math.max(offset / width, min), 1);
+    let range = max - min;
+    let percent = Math.round(ratio * range + min);
+    return percent;
   }
 
-  function handlePositionSteps (offset, width, min, max, stepWidth) {
-    let ratio = Math.min(Math.max(offset / width, 0), 1)
-    let range = (max - min)
-    let currentStep = Math.round((ratio * range) / stepWidth)
-    let percent = ((currentStep * stepWidth) / range) * 100
-    return percent
+  function handlePositionSteps(offset, width, min, max, stepWidth) {
+    let ratio = Math.min(Math.max(offset / width, 0), 1);
+    let range = max - min;
+    let currentStep = Math.round(ratio * range / stepWidth);
+    let percent = currentStep * stepWidth / range * 100;
+    return percent;
   }
 
-  function eventHandler (obj, fn, event, flag = true, update) {
-    fn(event)
-    obj.isMoving = flag
-    obj.animationFrame = window.requestAnimationFrame(update)
-    obj.offset = event.pageX - obj.dimensions.left
+  function eventHandler(obj, fn, event, flag, update) {
+    if (flag === undefined) flag = true;
+
+    fn(event);
+    obj.isMoving = flag;
+    obj.animationFrame = window.requestAnimationFrame(update);
+    obj.offset = event.pageX - obj.dimensions.left;
   }
 
-  function handleValue (min, max, percentage) {
-    let maxRange = max - min
-    return Math.round(((percentage * maxRange) / 100) + min)
+  function handleValue(min, max, percentage) {
+    let maxRange = max - min;
+    return Math.round(percentage * maxRange / 100 + min);
   }
 
-  function setValueInDom (el, value) {
+  function setValueInDom(el, value) {
     el.textContent = value;
   }
 
-  function setAttributeInDom (el, attr, value) {
-    return el.setAttribute(attr, value)
+  function setAttributeInDom(el, attr, value) {
+    return el.setAttribute(attr, value);
   }
 
-  function createSlider () {
-    let sliderNodeList = document.getElementsByClassName('js-ranger')
-    let sliderInputNodeList = document.getElementsByClassName('js-ranger-input')
-    let sliderTrackNodeList = document.getElementsByClassName('js-ranger-track')
+  function createSlider() {
+    let sliderNodeList = document.getElementsByClassName('js-ranger');
+    let sliderInputNodeList = document.getElementsByClassName('js-ranger-input');
+    let sliderTrackNodeList = document.getElementsByClassName('js-ranger-track');
 
     // -- Prevent the script to be excecuted if the required DOM
     // -- Implementation is wrong
-    if (
-      sliderNodeList.length <= 0 ||
-      sliderInputNodeList.length < sliderNodeList.length ||
-      sliderTrackNodeList.length < sliderNodeList.length) {
-      return
+    if (sliderNodeList.length <= 0 || sliderInputNodeList.length < sliderNodeList.length || sliderTrackNodeList.length < sliderNodeList.length) {
+      return;
     }
 
-    let sliderList = Array.prototype.slice.call(sliderNodeList)
-    let setDebouncedValue = debounce(setValueInDom, 10)
-    let setDebouncedAttr = debounce(setAttributeInDom, 40)
+    let sliderList = Array.prototype.slice.call(sliderNodeList);
+    let setDebouncedValue = debounce(setValueInDom, 10);
+    let setDebouncedAttr = debounce(setAttributeInDom, 40);
 
-    sliderList.forEach((slider, i, array) => {
-      let inputEl = slider.querySelector('.js-ranger-input')
-      let trackEl = slider.querySelector('.js-ranger-track')
-      let distanceEl = slider.querySelector('.js-ranger-distance')
-      let valueEl = slider.querySelector('.js-ranger-value')
-      let indicatorEL = slider.querySelector('.js-ranger-indicator')
+    sliderList.forEach(function (slider, i, array) {
+      let inputEl = slider.querySelector('.js-ranger-input');
+      let trackEl = slider.querySelector('.js-ranger-track');
+      let distanceEl = slider.querySelector('.js-ranger-distance');
+      let valueEl = slider.querySelector('.js-ranger-value');
+      let indicatorEL = slider.querySelector('.js-ranger-indicator');
 
       let ranger = {
         isMoving: false,
@@ -409,144 +412,159 @@ if (quiz){
         offset: 0,
         curretValue: 0,
         dimensions: trackEl.getBoundingClientRect()
-      }
+      };
 
-      let init = () => {
-        let initialPosition = setInitialPosition(ranger.min, ranger.max, ranger.value) + '%'
+      let init = function init() {
+        let initialPosition = setInitialPosition(ranger.min, ranger.max, ranger.value) + '%';
 
-        distanceEl.style.width = initialPosition
+        distanceEl.style.width = initialPosition;
 
         if (indicatorEL !== null) {
-          setValueInDom(valueEl, ranger.value)
-          indicatorEL.style.left = initialPosition
+          setValueInDom(valueEl, ranger.value);
+          indicatorEL.style.left = initialPosition;
         }
 
         // -- Set the steps fractions in DOM only if required
         if (!isNaN(ranger.steps)) {
-          let sliderFractionsEl = document.createElement('div')
-          let fractionCount = (ranger.max - ranger.min) / ranger.steps
-          let fractionDistance = (100 / fractionCount)
-          let i
+          let sliderFractionsEl = document.createElement('div');
+          let fractionCount = (ranger.max - ranger.min) / ranger.steps;
+          let fractionDistance = 100 / fractionCount;
+          let _i = undefined;
 
-          sliderFractionsEl.classList.add('Slider-steps')
-          slider.appendChild(sliderFractionsEl)
+          sliderFractionsEl.classList.add('Slider-steps');
+          slider.appendChild(sliderFractionsEl);
 
-          for (i = fractionCount - 1; i >= 1; i--) {
-            let fraction = document.createElement('span')
-            fraction.classList.add('Slider-fraction')
+          for (_i = fractionCount - 1; _i >= 1; _i--) {
+            let fraction = document.createElement('span');
+            fraction.classList.add('Slider-fraction');
 
-            fraction.style.left = (fractionDistance * i) + '%'
-            sliderFractionsEl.appendChild(fraction)
+            fraction.style.left = fractionDistance * _i + '%';
+            sliderFractionsEl.appendChild(fraction);
           }
         }
 
-        window.addEventListener('resize', () => {
-          ranger.dimensions = trackEl.getBoundingClientRect()
-        })
-      }
+        window.addEventListener('resize', function () {
+          ranger.dimensions = trackEl.getBoundingClientRect();
+        });
+      };
 
-      init()
+      init();
 
-      let onMouseDown = e => {
-        eventHandler(ranger, pauseEvent, e, true, update)
+      let onMouseDown = function onMouseDown(e) {
+        eventHandler(ranger, pauseEvent, e, true, update);
+
         if (!isNaN(ranger.steps)) {
-          ranger.currentPosition = handlePositionSteps(ranger.offset, ranger.dimensions.width, ranger.min, ranger.max, ranger.steps)
+          ranger.currentPosition = handlePositionSteps(ranger.offset, ranger.dimensions.width, ranger.min, ranger.max, ranger.steps);
         } else {
-          ranger.currentPosition = handlePosition(ranger.offset, ranger.dimensions.width)
+          ranger.currentPosition = handlePosition(ranger.offset, ranger.dimensions.width);
         }
 
         ranger.currentValue = handleValue(ranger.min, ranger.max, ranger.currentPosition);
-      }
+      };
 
-      let onMouseMove = e => {
+      let onMouseMove = function onMouseMove(e) {
         if (ranger.isMoving) {
-          eventHandler(ranger, pauseEvent, e, true, update)
+          eventHandler(ranger, pauseEvent, e, true, update);
 
           if (!isNaN(ranger.steps)) {
-            ranger.currentPosition = handlePositionSteps(ranger.offset, ranger.dimensions.width, ranger.min, ranger.max, ranger.steps)
+            ranger.currentPosition = handlePositionSteps(ranger.offset, ranger.dimensions.width, ranger.min, ranger.max, ranger.steps);
           } else {
-            ranger.currentPosition = handlePosition(ranger.offset, ranger.dimensions.width)
+            ranger.currentPosition = handlePosition(ranger.offset, ranger.dimensions.width);
           }
 
           ranger.currentValue = handleValue(ranger.min, ranger.max, ranger.currentPosition);
         }
-      }
+      };
 
-      let onMouseUp = e => {
+      let onMouseUp = function onMouseUp(e) {
         if (ranger.isMoving) {
-          window.cancelAnimationFrame(ranger.animationFrame)
-          ranger.isMoving = false
-          update(null, false)
+          window.cancelAnimationFrame(ranger.animationFrame);
+          ranger.isMoving = false;
+          update(null, false);
         }
+
         if (ranger.currentValue){
           updateSliderContent(ranger.currentValue);
         }
-      }
+      };
 
-      let onTouchstart = e => {
-        eventHandler(ranger, pauseEvent, e, true, update)
+      // let onTouchstart = function onTouchstart(e) {
+      //   eventHandler(ranger, pauseEvent, e, true, updateMobile);
 
-        if (!isNaN(ranger.steps)) {
-          ranger.currentPosition = handlePositionSteps(ranger.offset, ranger.dimensions.width, ranger.min, ranger.max, ranger.steps)
-        } else {
-          ranger.currentPosition = handlePosition(ranger.offset, ranger.dimensions.width)
-        }
+      //   if (!isNaN(ranger.steps)) {
+      //     ranger.currentPosition = handlePositionSteps(ranger.offset, ranger.dimensions.width, ranger.min, ranger.max, ranger.steps);
+      //   } else {
+      //     ranger.currentPosition = handlePosition(ranger.offset, ranger.dimensions.width);
+      //   }
 
-        ranger.currentValue = handleValue(ranger.min, ranger.max, ranger.currentPosition);
-      }
+      //   ranger.currentValue = handleValue(ranger.min, ranger.max, ranger.currentPosition);
+      // };
 
-      let onTouchmove = e => {
+      // let onTouchmove = function onTouchmove(e) {
+      //   if (ranger.isMoving) {
+      //     eventHandler(ranger, pauseEvent, e, true, updateMobile);
+
+      //     if (!isNaN(ranger.steps)) {
+      //       ranger.currentPosition = handlePositionSteps(ranger.offset, ranger.dimensions.width, ranger.min, ranger.max, ranger.steps);
+      //     } else {
+      //       ranger.currentPosition = handlePosition(ranger.offset, ranger.dimensions.width);
+      //     }
+
+      //     ranger.currentValue = handleValue(ranger.min, ranger.max, ranger.currentPosition);
+      //   }
+      // };
+
+      let onTouchend = function onTouchend(e) {
         if (ranger.isMoving) {
-          eventHandler(ranger, pauseEvent, e, true, update)
-
-          if (!isNaN(ranger.steps)) {
-            ranger.currentPosition = handlePositionSteps(ranger.offset, ranger.dimensions.width, ranger.min, ranger.max, ranger.steps)
-          } else {
-            ranger.currentPosition = handlePosition(ranger.offset, ranger.dimensions.width)
-          }
-
-          ranger.currentValue = handleValue(ranger.min, ranger.max, ranger.currentPosition);
+          window.cancelAnimationFrame(ranger.animationFrame);
+          ranger.isMoving = false;
+          updateMobile();
         }
-      }
 
-      let onTouchend = e => {
-        if (ranger.isMoving) {
-          window.cancelAnimationFrame(ranger.animationFrame)
-          ranger.isMoving = false
-          update(null, false)
-        }
         if (ranger.currentValue){
           updateSliderContent(ranger.currentValue);
         }
-      }
+      };
 
       // -- Write only function responsible for the updates of the
       // -- slider components
-      let update = (timeStamp, loop = true) => {
+      let update = function update(timeStamp) {
+        let loop = arguments.length <= 1 || arguments[1] === undefined ? true : arguments[1];
+
         if (loop) {
-          ranger.animationFrame = window.requestAnimationFrame(update)
+          ranger.animationFrame = window.requestAnimationFrame(update);
         }
 
-        slider.classList.toggle('is-moving', ranger.isMoving)
-        distanceEl.style.width = ranger.currentPosition + '%'
-        setDebouncedAttr(inputEl, 'value', ranger.currentValue)
+        slider.classList.toggle('is-moving', ranger.isMoving);
+        distanceEl.style.width = ranger.currentPosition + '%';
+        setDebouncedAttr(inputEl, 'value', ranger.currentValue);
 
         if (indicatorEL !== null) {
-          setDebouncedValue(valueEl, ranger.currentValue)
-          indicatorEL.style.left = ranger.currentPosition + '%'
+          setDebouncedValue(valueEl, ranger.currentValue);
+          indicatorEL.style.left = ranger.currentPosition + '%';
         }
-      }
+      };
 
-      slider.addEventListener('mousedown', onMouseDown)
-      window.addEventListener('mousemove', debounce(onMouseMove, 10))
-      window.addEventListener('mouseup', onMouseUp)
+      let updateMobile = function updateMobile() {
+        slider.classList.toggle('is-moving', ranger.isMoving);
+        distanceEl.style.width = ranger.currentPosition + '%';
+        setDebouncedAttr(inputEl, 'value', ranger.currentValue);
+        alert(ranger.currentPosition);
+
+        if (indicatorEL !== null) {
+          setDebouncedValue(valueEl, ranger.currentValue);
+          indicatorEL.style.left = ranger.currentPosition + '%';
+        }
+      };
+
+      slider.addEventListener('mousedown', onMouseDown);
+      window.addEventListener('mousemove', debounce(onMouseMove, 10));
+      window.addEventListener('mouseup', onMouseUp);
 
       if ('ontouchstart' in window) {
-        slider.addEventListener('touchstart', onTouchstart)
-        slider.addEventListener('touchmove', onTouchmove)
-        slider.addEventListener('touchend', onTouchend)
+        slider.addEventListener('touchend', onTouchend);
       }
-    })
+    });
   }
 
   // Quiz question on mobiles
