@@ -238,11 +238,24 @@ if (quiz){
 
   function updateSliderContent(dataattr){
     activeStep = quiz.querySelector('.quiz-step.js-active');
+    let sliderContent = activeStep.querySelector('.slider-content');
+    let holders = sliderContent.querySelectorAll('.holder');
+    // let activeH = sliderContent.querySelector('.js-active');
 
-    let activeH = activeStep.querySelector('.slider-content .js-active');
-    if (activeH){
-      activeH.classList.remove('js-active');
-      let nextActiveH = activeStep.querySelector('.holder[data-attr="'+dataattr+'"');
+    if (holders.length > 0){
+      holders.forEach((holder, index) => {
+        if (holder.classList.contains('js-active')){
+          holder.classList.remove('js-active');
+        }
+        if ((index+1) > dataattr){
+          holder.setAttribute('data-direction', 'right')
+        }
+        if ((index+1) < dataattr){
+          holder.setAttribute('data-direction', 'left')
+        }
+      });
+      
+      let nextActiveH = sliderContent.querySelector('.holder[data-attr="'+dataattr+'"');
       nextActiveH.classList.add('js-active');
     }
   }

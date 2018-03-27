@@ -1785,10 +1785,10 @@ body{
 }
 .quiz-step{
 	margin: 0;
-	opacity: 0;
 	padding-left: 50px;
 	padding-right: 50px;
 	box-sizing: border-box;
+	opacity: 0;
 	position: absolute;
 	left: 0;
 	top: 0;
@@ -2010,6 +2010,15 @@ body{
 				&.ico-figure{
 					background-position: -600px -600px;
 				}
+			}
+		}
+		&.js-active{
+			span[class^='ico']{
+				-webkit-animation-duration: 1s;
+				animation-duration: .7s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+				@extend .bounce;
 			}
 		}
 	}
@@ -2318,6 +2327,7 @@ body{
 .slider-content{
 	padding-top: 35px;
 	padding-bottom: 40px;
+	position: relative;
 	h3{
 		font-weight: 400;
 		font-size: 24px;
@@ -2328,10 +2338,30 @@ body{
 		color: #313362;
 	}
 	.holder{
-		display: none;
+		opacity: 0;
+		position: absolute;
+		left: 0;
+		top: 35px;
+		width: 100%;
+		@include animation;
+		z-index: -1;
+		right: -200px;
+	}
+	.holder[data-direction="right"]{
+		right: -200px;
+		left: auto;
+	}
+	.holder[data-direction="left"]{
+		left: -200px;
+		right: auto;
 	}
 	.js-active{
-		display: block;
+		position: relative;
+		z-index: 10;
+		opacity: 1;
+		left: 0 !important;
+		right: 0 !important;
+		top: auto;
 	}
 	span[class^="ico"]{
 		margin-bottom: 10px;
