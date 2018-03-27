@@ -184,6 +184,24 @@
 			}
 		}
 	}
+	.selling-reasons{
+		margin-bottom: 12px;
+	}
+	.quiz-step{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.quiz-content{
+		.boxes-holder{
+			flex-wrap: wrap;
+			margin: 0 -5px;
+		}
+		.box{
+			margin-left: 5px;
+			margin-right: 5px;
+			width: calc(100% / 2 - 10px);
+		}
+	}
 }
 @media screen and (max-height:700px) {
 	.howitworks-popup{
@@ -506,6 +524,7 @@
 		bottom: 0;
 		background: #000;
 		z-index: 99;
+		height: 100vh;
 		.inner{
 			position: absolute;
 			left: 20px;
@@ -1144,6 +1163,339 @@
 	.endcta .btn{
 		min-width: 0;
 	}
+	.quiz-page{
+		background: #fff url(../images/homepage-bg-mobile.png) no-repeat 50% 70px;
+		.howitworks-popup{
+			display: none;
+			&.js-visible{
+				display: block;
+			}
+		}
+		#footer{
+			display: none;
+		}
+		#header{
+			background: #fff;
+			padding: 8px 0 11px;
+			border-top: 0;
+			.logo{
+				width: 142px;
+				height: 30px;
+			}
+			.js-progressbar{
+				background: #9670c3;
+				display: block;
+				width: 100%;
+			}
+			.nav-holder .opener{
+				margin-top: 7px;
+			}
+		}
+		#container{
+			padding-top: 54px;
+			padding-bottom: 15px;
+		}
+		.contact-person{
+			top: 0;
+			margin: 0 0 5px;
+			font-size: 14px;
+			.photo{
+				margin-bottom: 4px;
+				img{
+					width: 70px;
+					height: auto;
+					border: 0;
+				}
+			}
+			.name{
+				display: inline-block;
+			}
+			em{
+				display: inline-block;
+				&:before{
+					content: '-';
+					margin-right: 4px;
+				}
+			}
+		}
+		.quiz-holder{
+			background: none;
+			box-shadow: none;
+			padding-bottom: 0;
+			margin-bottom: 0;
+		}
+		.quiz-inner{
+			padding-bottom: 0;
+		}
+		.quiz-content{
+			background: #fff;
+			box-shadow:0 0 7px rgba(0,0,0,.1);
+			border-radius: 10px;
+			h2{
+				position: relative;
+				font-size: 20px;
+				line-height: 22px;
+				margin-bottom: 5px;
+				margin-left: -10px;
+				margin-right: -10px;
+				color: #fff;
+				padding: 12px 5px;
+				background: rgb(52,52,100);
+				border-radius: 10px 10px 0 0;
+				background: -moz-linear-gradient(left, rgba(52,52,100,1) 0%, rgba(149,112,194,1) 100%);
+				background: -webkit-linear-gradient(left, rgba(52,52,100,1) 0%,rgba(149,112,194,1) 100%);
+				background: linear-gradient(to right, rgba(52,52,100,1) 0%,rgba(149,112,194,1) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#343464', endColorstr='#9570c2',GradientType=1 );
+			}
+			.quiz-step[data-attr="4"]{
+				.selling-reasons{
+					.box{
+						padding-top: 1px;
+					}
+				}
+				span[class^="ico"]{
+					transform: scale(1);
+					margin: 10px auto;
+				}
+			}
+			.quiz-step[data-attr="5"]{
+				span[class^="ico"]{
+					transform: scale(.7);
+					margin: -10px auto -6px;
+					&.ico-average,
+					&.ico-poor{
+						margin-top: 10px;
+					}
+				}
+			}
+			.quiz-step[data-attr="7"]{
+				span[class^="ico"]{
+					transform: scale(.55);
+					margin-bottom: -20px;
+					margin-top: -15px;
+				}
+				.selling-reasons{
+					padding-top: 0;
+					.box{
+						padding-top: 5px;
+						h4{
+							font-size: 16px;
+							line-height: 18px;
+						}
+					}
+				}
+				.question{
+					position: absolute;
+					right: 10px;
+					bottom: -250px;
+					span{
+						left: auto;
+						right: 0;
+						top: auto;
+						bottom: 56px;
+						color: #313362;
+						padding-left: 10px;
+						padding-right: 10px;
+						&:after{
+							left: auto;
+							right: 6px;
+							top: auto;
+							bottom: -14px;
+							transform: rotate(180deg);
+						}
+					}
+				}
+			}
+			.quiz-step[data-attr="9"]{
+				.img-holder{
+					img{
+						display: block;
+						width: 150px;
+						height: auto;
+						margin: 0 auto;
+					}
+				}
+			}
+			span[class^="ico"]{
+				transform: scale(0.5);
+				margin: -20px auto -22px;
+			}
+			.box{
+				padding-top: 5px;
+				padding-bottom: 10px;
+				h4{
+					font-size: 18px;
+					margin-bottom: 3px;
+				}
+				h5{
+					font-size: 14px;
+				}
+			}
+		}
+		.quiz-step{
+			padding-left: 10px;
+			padding-right: 10px;
+			width: 100% !important;
+			padding-bottom: 60px;
+			height: calc(100vh - 165px);
+			&[data-attr="1"]{
+				.quiz-btns{
+					.btn{
+						width: 100%;
+						max-width: 100%;
+						border-radius: 0 0 10px 10px;
+					}
+				}
+			}
+		}
+		.quiz-btns{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			margin-left: 0;
+			.btn{
+				padding-top: 17px;
+				padding-bottom: 17px;
+				border-radius: 0 0 10px;
+				width: 50%;
+				float: right;
+				margin: 0 !important;
+				box-shadow: none;
+				border: 0;
+				min-width: 0;
+				max-width: 100%;
+				&:hover{
+					background: #00d5c4;
+					color: #fff;
+				}
+			}
+			.back{
+				float: left;
+				width: 50%;
+				background: #00d5c4;
+				color: #fff;
+				padding: 17px 15px;
+				border-radius: 0 0 0 10px;
+				box-sizing: border-box;
+				line-height: 20px;
+				position: relative;
+				&:after{
+					content: '';
+					position: absolute;
+					right: 0;
+					top: 0;
+					height: 54px;
+					width: 2px;
+					background: rgba(0,0,0,.1);
+				}
+			}
+			.btn-holder{
+				width: 50%;
+				float: right;
+				margin: 0 !important;
+				.btn{
+					width: 100%;
+				}
+			}
+		}
+		.quiz-progressbar{
+			em{
+				color: #798794;
+				font-size: 14px;
+				line-height: normal;
+				margin: 0;
+				font-weight: 400;
+				position: absolute;
+				right: 10px;
+				top: 60px;
+			}
+			.bar{
+				display: none;
+			}
+		}
+		.address-form{
+			padding-top: 0;
+			padding-bottom: 0;
+			.field{
+				margin-bottom: 5px;
+			}
+			label{
+				font-size: 15px;
+			}
+			.custom-select-opener,
+			.txt{
+				border: 1px solid #e2e7eb;
+				border-radius: 5px;
+				line-height: 20px;
+				padding: 8px;
+			}
+			.custom-select-opener{
+				&:after{
+					right: 10px;
+				}
+			}
+			.fields3{
+				display: block;
+				.field{
+					width: 100% !important;
+				}
+			}
+		}
+		.slider-content{
+			padding: 10px 0;
+			span[class^="ico"]{
+				transform: scale(.8);
+				margin: -10px auto;
+			}
+			h3{
+				font-size: 20px;
+				margin-bottom: 5px;
+			}
+			em{
+				font-size: 16px;
+				line-height: normal;
+				display: block;
+			}
+		}
+		.Slider{
+			padding-top: 54px;
+			margin-left: 20px;
+			margin-right: 20px;
+			margin-bottom: 20px;
+		}
+	}
+	.question{
+		position: absolute;
+		right: 10px;
+		bottom: -50px;
+		span{
+			left: auto;
+			right: 0;
+			color: #313362;
+			padding-left: 10px;
+			padding-right: 10px;
+			&:after{
+				left: auto;
+				right: 6px;
+			}
+		}
+		&:hover,
+		&.js-visible{
+			background-position: 0 -42px;
+			span{
+				opacity: 1;
+				z-index: 10;
+			}
+		}
+	}
+	.selling-reasons{
+		padding: 5px 0 0;
+		margin: 0;
+		h3{
+			display: none;
+		}
+	}
 }
 @media screen and (max-width:414px) {
 	.guide-overview .hero, .blogpost-page .hero{
@@ -1280,6 +1632,20 @@
 					margin-left: 0;
 				}
 			}
+		}
+	}
+	.Slider-steps{
+		&:after,
+		&:before{
+			white-space: normal;
+			max-width: 100px;
+		}
+	}
+}
+@media screen and (max-height:550px) {
+	.quiz-page{
+		.quiz-step{
+			height: auto;
 		}
 	}
 }
