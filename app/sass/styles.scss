@@ -2202,62 +2202,6 @@ body{
 		margin-bottom: 45px;
 	}
 }
-.Slider-track{
-	background: #ddd;
-	border-radius: 5px;
-	height: 7px;
-	z-index: auto;
-}
-.Slider-handle{
-	background: #fff;
-	box-shadow: 0 2px 9px rgba(0,0,0,.15);
-	width: 30px;
-	height: 30px;
-	z-index: 3;
-	right: -15px;
-}
-.Slider-indicator{
-	display: none;
-}
-.Slider-distance{
-	border-radius: 5px 0 0 5px;
-	background: #00d5c4;
-}
-.Slider-steps{
-	top: -7px;
-	height: 7px;
-	z-index: 1;
-	&:after,
-	&:before{
-		color: #313362;
-		font-size: 14px;
-		position: absolute;
-		left: -50%;
-		bottom: 26px;
-		line-height: normal;
-		white-space: nowrap;
-	}
-}
-.Slider-fraction{
-	height: 7px;
-	background: rgba(151,151,151,.5);
-	&:before{
-		color: #313362;
-		font-size: 14px;
-		position: absolute;
-		left: -50%;
-		bottom: 26px;
-		line-height: normal;
-		white-space: nowrap;
-	}
-}
-.Slider{
-	width: auto;
-	display: block;
-	max-width: 575px;
-	margin: 0 auto 35px;
-	height: auto;
-}
 #howsoon{
 	.Slider-steps{
 		&:before{
@@ -2356,6 +2300,95 @@ body{
 	}
 	span[class^="ico"]{
 		margin-bottom: 10px;
+	}
+}
+.text-content{
+	line-height: 28px;
+	font-size: 16px;
+	color: #6d6e71;
+	padding-bottom: 100px;
+	h2{
+		text-align: center;
+		font-size: 36px;
+		margin-bottom: 70px;
+	}
+	p{
+		margin: 0;
+	}
+	.section{
+		padding-bottom: 32px;
+		h3{
+			font-size: 24px;
+			text-transform: uppercase;
+			margin-bottom: 5px;
+		}
+		ul{
+			padding-top: 30px;
+			ul{
+				padding-top: 0;
+			}
+		}
+		li{
+			padding-left: 30px;
+			position: relative;
+			&:before{
+				content: '\2022';
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		}
+	}
+	.note{
+		background: #e5f7ff;
+		padding: 16px 30px;
+		margin-top: 10px;
+	}
+	address{
+		font-weight: bold;
+		font-style: normal;
+	}
+	dl{
+		margin: 30px 0 0;
+		overflow: hidden;
+		dt{
+			float: left;
+			margin-right: 4px;
+			font-weight: bold;
+			text-decoration: underline;
+		}
+		dd{
+			margin-bottom: 30px;
+		}
+	}
+}
+.text-content-l{
+	padding-bottom: 68px;
+	.section{
+		padding-bottom: 0;
+		h3{
+			text-transform: none;
+		}
+		ul{
+			margin-bottom: 32px;
+			padding-top: 0;
+			ul{
+				margin-bottom: 0;
+			}
+			&.pl{
+				padding-left: 30px;
+			}
+		}
+	}
+	p{
+		margin: 0 0 32px;
+	}
+	.address{
+		margin-bottom: 32px;
+		margin-top: -32px;
+		p{
+			margin: 0;
+		}
 	}
 }
 @import "responsive";

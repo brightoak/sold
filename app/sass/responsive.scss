@@ -1557,6 +1557,23 @@
 			display: none;
 		}
 	}
+	.text-content{
+		padding-bottom: 30px;
+		padding-top: 100px;
+		h2{
+			margin-bottom: 25px;
+			font-size: 30px;
+			text-align: left;
+		}
+		.section{
+			ul{
+				padding-top: 10px;
+			}
+			li{
+				padding-left: 10px;
+			}
+		}
+	}
 }
 @media screen and (max-width:414px) {
 	.guide-overview .hero, .blogpost-page .hero{
