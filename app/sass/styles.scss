@@ -2361,6 +2361,12 @@ body{
 			margin-bottom: 30px;
 		}
 	}
+	h4{
+		font-weight: normal;
+		color: #6d6e71;
+		font-size: 16px;
+		margin: 0;
+	}
 }
 .text-content-l{
 	padding-bottom: 68px;
@@ -2388,6 +2394,321 @@ body{
 		margin-top: -32px;
 		p{
 			margin: 0;
+		}
+	}
+}
+.hero-inner-recopage{
+	height: auto;
+	margin-bottom: 120px;
+	&:after{
+		display: none;
+	}
+}
+.seller-profile{
+	background: #fff;
+	box-shadow: 0 0 9px rgba(0,0,0,.1);
+	border-radius: 7px;
+	padding:0 48px 11px;
+	text-align: center;
+	box-sizing: border-box;
+	max-width: 680px;
+	margin: 0 auto 42px;
+	.photo{
+		width: 182px;
+		height: 182px;
+		border-radius: 50%;
+		overflow: hidden;
+		top: -91px;
+		margin: 0 auto -71px;
+		position: relative;
+		img{
+			@extend .fullwidthimg
+		}
+	}
+	.name{
+		display: block;
+		color: #313362;
+		font-size: 24px;
+		margin-bottom: 12px;
+	}
+	address{
+		font-style: normal;
+		margin-bottom: 30px;
+	}
+	.icos{
+		display: flex;
+		li{
+			width: 60px;
+			background: #f5f7fa;
+			height: 60px;
+			border-radius: 50%;
+			margin: 0 12px 12px;
+		}
+		span{
+			display: block;
+			margin: 11px auto 0;
+			background:url(../images/icos-recommendations-profile.png) no-repeat;
+			height: 41px;
+			width: 38px;
+		}
+		span.ico2{
+			background-position: 0 -41px;
+		}
+		span.ico3{
+			background-position: 0 -82px;
+			width: 41px;
+		}
+		span.ico4{
+			background-position: 0 -123px;
+		}
+		span.ico5{
+			background-position: 0 -164px;
+		}
+		span.ico6{
+			background-position: 0 -205px;
+		}
+		span.ico7{
+			background-position: 0 -246px;
+			width: 48px;
+			height: 26px;
+			margin-top: 16px;
+		}
+	}
+}
+.seller-section{
+	background: #fff;
+	box-shadow: 0 0 9px rgba(0,0,0,.1);
+	border-radius: 10px;
+	margin-bottom: 42px;
+	.header{
+		overflow: hidden;
+		padding: 12px 12px 12px 20px;
+		border-radius: 10px 10px 0 0;
+		background: rgb(167,182,194);
+		background: -moz-linear-gradient(left, rgba(167,182,194,1) 0%, rgba(161,177,190,1) 20%, rgba(128,151,167,1) 78%, rgba(121,145,162,1) 100%);
+		background: -webkit-linear-gradient(left, rgba(167,182,194,1) 0%,rgba(161,177,190,1) 20%,rgba(128,151,167,1) 78%,rgba(121,145,162,1) 100%);
+		background: linear-gradient(to right, rgba(167,182,194,1) 0%,rgba(161,177,190,1) 20%,rgba(128,151,167,1) 78%,rgba(121,145,162,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7b6c2', endColorstr='#7991a2',GradientType=1 );
+		color: #fff;
+		h2{
+			color: #fff;
+			float: left;
+			font-size: 36px;
+			margin: 0;
+			padding-top: 10px;
+			i{
+				display: inline-block;
+				width: 44px;
+				height: 34px;
+				background:url(../images/ico-auctionsale.png) no-repeat;
+				margin-right: 20px;
+				margin-left: 4px;
+				margin: 0 20px 0 4px;
+				vertical-align: top;
+				&.ico-cashoffer{
+					background-image: url(../images/ico-cashoffer.png);
+					width: 45px;
+					height: 32px;
+					margin-left: 6px;
+					margin-top: 4px;
+					margin-right: 17px;
+				}
+				&.ico-forsale{
+					background-image: url(../images/ico-forsale.png);
+					width: 36px;
+					height: 39px;
+				}
+				&.ico-realestateagent{
+					background-image: url(../images/ico-realestateagent.png);
+					width: 52px;
+					height: 40px;
+				}
+			}
+		}
+		.holder{
+			float: right;
+		}
+		.tabs{
+			float: left;
+			text-transform: uppercase;
+			font-weight: 400;
+			font-size: 15px;
+			padding-top: 14px;
+			line-height: 20px;
+			position: relative;
+			margin-bottom: -12px;
+			li{
+				display: inline-block;
+			}
+			.bar{
+				position: absolute;
+				left: 0;
+				bottom: -26px;
+				width: 116px;
+				height: 6px;
+				background: #00d5c4;
+				padding: 0;
+				@include animation;
+			}
+			a{
+				color: #fff;
+				display: inline-block;
+				padding: 5px 16px;
+			}
+			& + .btn-holder{
+				margin-left:40px;
+			}
+		}
+		.btn-holder{
+			float: right;
+		}
+		.btn{
+			padding-top: 17px;
+			padding-bottom: 17px;
+			border-radius: 10px;
+			box-shadow: none;
+		}
+	}
+	&-first{
+		.header{
+			background: rgb(96,71,148);
+			background: -moz-linear-gradient(left, rgba(96,71,148,1) 0%, rgba(84,66,136,1) 30%, rgba(64,58,114,1) 66%, rgba(62,57,112,1) 66%, rgba(55,54,105,1) 80%, rgba(50,51,99,1) 100%);
+			background: -webkit-linear-gradient(left, rgba(96,71,148,1) 0%,rgba(84,66,136,1) 30%,rgba(64,58,114,1) 66%,rgba(62,57,112,1) 66%,rgba(55,54,105,1) 80%,rgba(50,51,99,1) 100%);
+			background: linear-gradient(to right, rgba(96,71,148,1) 0%,rgba(84,66,136,1) 30%,rgba(64,58,114,1) 66%,rgba(62,57,112,1) 66%,rgba(55,54,105,1) 80%,rgba(50,51,99,1) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#604794', endColorstr='#323363',GradientType=1 );
+		}
+		.content{
+			padding: 50px;
+		}
+	}
+	.content{
+		padding: 50px 18px;
+		position: relative;
+		.tab{
+			display: flex;
+			@include animation;
+			position: absolute;
+			right: -200px;
+			opacity: 0;
+			z-index: -1;
+			top: 50px;
+			width: 100%;
+			&.js-active{
+				position: relative;
+				z-index: 10;
+				opacity: 1;
+				left: 0 !important;
+				right: 0 !important;
+				top: auto;
+			}
+		}
+		.tab[data-direction="right"]{
+			right: -200px;
+			left: auto;
+		}
+		.tab[data-direction="left"]{
+			left: -200px;
+			right: auto;
+		}
+		.overview-tab{
+			align-items: center;
+			.list-holder{
+				display: flex;
+				justify-content: center;
+				color: #313362;
+				font-size: 28px;
+				font-weight: 400;
+				width: 38%;
+				li{
+					margin-top: 22px;
+					&:first-child{
+						margin-top: 0;
+					}
+				}
+				.fa{
+					color: #00d5c4;
+					margin-right: 20px;
+				}
+			}
+		}
+		.match{
+			text-align: center;
+			width: 33%;
+			.img{
+				display: block;
+				margin-bottom: 12px;
+				img{
+					@extend .fullwidthimg;
+					max-width: 320px;
+					margin: 0 auto;
+				}
+			}
+			strong{
+				display: block;
+				text-transform: uppercase;
+				color: #313362;
+				margin: 0;
+				font-size: 28px;
+			}
+		}
+		.text-block{
+			width: 29%;
+			.company-logo{
+				display: block;
+				margin-bottom: 38px;
+				img{
+					display: block;
+					max-width: 100%;
+					height: auto;
+				}
+			}
+			p{
+				font-size: 16px;
+			}
+			dt{
+				text-transform: uppercase;
+				font-weight: bold;
+				color: #313362;
+				font-size: 16px;
+				margin-bottom: 18px;
+			}
+			dd{
+				li{
+					margin-top: 20px;
+					&:first-child{
+						margin-top: 0;
+					}
+				}
+				i{
+					display: inline-block;
+					vertical-align: top;
+				}
+				.ico-auctionbenefits{
+					background:url(../images/ico-auctionbenefits.png) no-repeat;
+					width: 24px;
+					height: 22px;
+					margin-right: 12px;
+					margin-top: 2px;
+				}
+				.ico-auctionconsiderations{
+					background:url(../images/ico-auctionconsiderations.png) no-repeat;
+					width: 24px;
+					height: 24px;
+					margin-right: 12px;
+					margin-top: 3px;
+				}
+			}
+		}
+		.text-holder{
+			width: calc(100% / 3);
+			box-sizing: border-box;
+			padding: 0 32px;
+			font-size: 16px;
+			h3{
+				font-size: 20px;
+				font-weight: bold;
+				margin-bottom: 16px;
+			}
 		}
 	}
 }

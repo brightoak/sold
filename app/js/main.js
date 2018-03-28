@@ -12,6 +12,7 @@
     8. How it works popup
     9. Custom select
     10. Quiz
+    11. Tabs on Recommendations page
 
 ****/
 
@@ -240,7 +241,6 @@ if (quiz){
     activeStep = quiz.querySelector('.quiz-step.js-active');
     let sliderContent = activeStep.querySelector('.slider-content');
     let holders = sliderContent.querySelectorAll('.holder');
-    // let activeH = sliderContent.querySelector('.js-active');
 
     if (holders.length > 0){
       holders.forEach((holder, index) => {
@@ -585,10 +585,59 @@ if (quiz){
     let questions = quiz.querySelectorAll('.question');
     if (questions.length > 0){
       questions.forEach((question) => {
-        question.onclick = (e) => {
+        question.onclick = () => {
           question.classList.toggle('js-visible')
         }
       });
     }
   }
+}
+
+// 11. Tabs on Recommendations page
+let sellerSections = document.querySelectorAll('.seller-section');
+if (sellerSections.length > 0){
+  sellerSections.forEach((section) => {
+    let tabset = section.querySelector('.header .tabs');
+    let tabsEls = tabset.querySelectorAll('.tabs li:not(.bar)');
+    let tabBar = tabset.querySelector('.bar');
+    let tabs = section.querySelectorAll('.content .tab');
+    tabBar.style.width = tabsEls[0].clientWidth + 'px';
+
+    tabsEls.forEach((el) => {
+      let link = el.querySelector('a');
+      link.onclick = (e) => {
+        e.preventDefault();
+        let parent = link.parentNode;
+        if (!parent.classList.contains('js-active')){
+          let activeEl = tabset.querySelector('.js-active');
+          activeEl.classList.remove('js-active');
+          parent.classList.add('js-active');
+          tabBar.style.left = parent.offsetLeft + 'px';
+          tabBar.style.width = parent.clientWidth + 'px';
+
+          let targetTabNumber = link.getAttribute('href');
+          let targetTab = section.querySelector('.content .tab[data-attr="'+targetTabNumber+'"]');
+
+          tabs.forEach((holder, index) => {
+            if (holder.classList.contains('js-active')){
+              holder.classList.remove('js-active');
+            }
+            if ((index+1) > targetTabNumber){
+              holder.setAttribute('data-direction', 'right');
+            }
+            if ((index+1) < targetTabNumber){
+              holder.setAttribute('data-direction', 'left');
+            }
+          });
+          targetTab.classList.add('js-active');
+        }
+      }
+    });
+    if (window.innerWidth < 769) {
+      let sectionHeading = section.querySelector('.header h2');
+      sectionHeading.onclick = () => {
+        section.classList.toggle('js-opened');
+      }
+    }
+  });
 }
