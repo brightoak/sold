@@ -1621,7 +1621,7 @@
 			padding-right: 10px;
 			width: 100% !important;
 			padding-bottom: 60px;
-			height: calc(100vh - 165px);
+			// height: calc(100vh - 165px);
 			&[data-attr="1"]{
 				.quiz-btns{
 					.btn{
@@ -1630,6 +1630,19 @@
 						border-radius: 0 0 10px 10px;
 					}
 				}
+			}
+			&[data-attr="1"]{
+				padding-bottom: 70px;
+			}
+			&[data-attr="9"]{
+				padding-bottom: 30px;
+				.content{
+					padding-bottom: 0;
+				}
+			}
+			.custom-select-panel{
+				bottom: 100%;
+				top: auto;
 			}
 		}
 		.quiz-btns{
@@ -1720,9 +1733,12 @@
 				}
 			}
 			.fields3{
-				display: block;
+				flex-wrap: wrap;
 				.field{
-					width: 100% !important;
+					width: 49%;
+					&:first-child{
+						width: 100% !important;
+					}
 				}
 			}
 		}
@@ -1754,12 +1770,18 @@
 		position: absolute;
 		right: 10px;
 		bottom: -50px;
+		z-index: 20;
+		overflow: hidden;
+		&.js-visible{
+			overflow: visible;
+		}
 		span{
 			left: auto;
 			right: 0;
 			color: #313362;
 			padding-left: 10px;
 			padding-right: 10px;
+			z-index: 20;
 			&:after{
 				left: auto;
 				right: 6px;
