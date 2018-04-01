@@ -501,31 +501,31 @@ if (quiz){
         }
       };
 
-      // let onTouchstart = function onTouchstart(e) {
-      //   eventHandler(ranger, pauseEvent, e, true, updateMobile);
+      let onTouchstart = function onTouchstart(e) {
+        eventHandler(ranger, pauseEvent, e, true, updateMobile);
 
-      //   if (!isNaN(ranger.steps)) {
-      //     ranger.currentPosition = handlePositionSteps(ranger.offset, ranger.dimensions.width, ranger.min, ranger.max, ranger.steps);
-      //   } else {
-      //     ranger.currentPosition = handlePosition(ranger.offset, ranger.dimensions.width);
-      //   }
+        if (!isNaN(ranger.steps)) {
+          ranger.currentPosition = handlePositionSteps(ranger.offset, ranger.dimensions.width, ranger.min, ranger.max, ranger.steps);
+        } else {
+          ranger.currentPosition = handlePosition(ranger.offset, ranger.dimensions.width);
+        }
 
-      //   ranger.currentValue = handleValue(ranger.min, ranger.max, ranger.currentPosition);
-      // };
+        ranger.currentValue = handleValue(ranger.min, ranger.max, ranger.currentPosition);
+      };
 
-      // let onTouchmove = function onTouchmove(e) {
-      //   if (ranger.isMoving) {
-      //     eventHandler(ranger, pauseEvent, e, true, updateMobile);
+      let onTouchmove = function onTouchmove(e) {
+        if (ranger.isMoving) {
+          eventHandler(ranger, pauseEvent, e, true, updateMobile);
 
-      //     if (!isNaN(ranger.steps)) {
-      //       ranger.currentPosition = handlePositionSteps(ranger.offset, ranger.dimensions.width, ranger.min, ranger.max, ranger.steps);
-      //     } else {
-      //       ranger.currentPosition = handlePosition(ranger.offset, ranger.dimensions.width);
-      //     }
+          if (!isNaN(ranger.steps)) {
+            ranger.currentPosition = handlePositionSteps(ranger.offset, ranger.dimensions.width, ranger.min, ranger.max, ranger.steps);
+          } else {
+            ranger.currentPosition = handlePosition(ranger.offset, ranger.dimensions.width);
+          }
 
-      //     ranger.currentValue = handleValue(ranger.min, ranger.max, ranger.currentPosition);
-      //   }
-      // };
+          ranger.currentValue = handleValue(ranger.min, ranger.max, ranger.currentPosition);
+        }
+      };
 
       let onTouchend = function onTouchend(e) {
         if (ranger.isMoving) {
@@ -562,7 +562,7 @@ if (quiz){
         slider.classList.toggle('is-moving', ranger.isMoving);
         distanceEl.style.width = ranger.currentPosition + '%';
         setDebouncedAttr(inputEl, 'value', ranger.currentValue);
-        alert(ranger.currentPosition);
+        // alert(ranger.currentPosition);
 
         if (indicatorEL !== null) {
           setDebouncedValue(valueEl, ranger.currentValue);
@@ -575,6 +575,8 @@ if (quiz){
       window.addEventListener('mouseup', onMouseUp);
 
       if ('ontouchstart' in window) {
+        slider.addEventListener('touchstart', onTouchstart);
+        slider.addEventListener('touchmove', onTouchmove);
         slider.addEventListener('touchend', onTouchend);
       }
     });
