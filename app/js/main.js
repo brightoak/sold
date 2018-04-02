@@ -575,8 +575,8 @@ if (quiz){
       window.addEventListener('mouseup', onMouseUp);
 
       if ('ontouchstart' in window) {
-        slider.addEventListener('touchstart', onTouchstart);
-        slider.addEventListener('touchmove', onTouchmove);
+        // slider.addEventListener('touchstart', onTouchstart);
+        // slider.addEventListener('touchmove', onTouchmove);
         slider.addEventListener('touchend', onTouchend);
       }
     });
