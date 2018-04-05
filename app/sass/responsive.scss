@@ -525,6 +525,13 @@
 		background: #000;
 		z-index: 99;
 		height: 100vh;
+		.headroom--top &{
+			margin-top: -3px;
+		}
+		.headroom--unpinned &{
+			@include animation;
+			top: 78px;
+		}
 		.inner{
 			position: absolute;
 			left: 20px;
@@ -555,14 +562,18 @@
 						display: none;
 					}
 				}
-				&:nth-child(2){
-					order:-1;
+				&:not(.js-dropdown){
+					order:5;
+				}
+				&:hover{
+					.drop{
+						display: none;
+					}
 				}
 			}
 			.drop{
 				position: static;
 				padding: 0;
-				display: block;
 				border-top: 2px solid #ebeaf4;
 				border-bottom: 1px solid #ebeaf4;
 				margin-top: 12px;
@@ -587,6 +598,12 @@
 					&:hover{
 						background: none;
 					}
+				}
+			}
+			.js-active:hover,
+			.js-active{
+				.drop{
+					display: block;
 				}
 			}
 		}
@@ -1858,6 +1875,9 @@
 		}
 	}
 	.opened.nav-holder{
+		.headroom--unpinned &{
+			top: 69px;
+		}
 		.inner{
 			left: 5px;
 			top: 5px;

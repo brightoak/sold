@@ -71,6 +71,15 @@ if (opener){
             navHolder.classList.remove('opened');
         }
     }
+    let dropHolders = navHolder.querySelectorAll('.js-dropdown a');
+    dropHolders.forEach((link) => {
+      link.onclick = (e) => {
+        e.preventDefault();
+        let activeEl = navHolder.querySelector('.js-active');
+        activeEl.classList.remove('js-active');
+        link.parentNode.classList.add('js-active');
+      }
+    });
 }
 
 // 5. Contact Form Falidation
